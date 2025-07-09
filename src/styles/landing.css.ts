@@ -21,49 +21,6 @@ export const dottedBg = style({
   backgroundSize: '20px 20px',
 });
 
-export const header = style({
-  width: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  padding: '32px 40px 0 40px',
-  zIndex: 1,
-  position: 'relative',
-});
-
-export const logoRow = style({
-  display: 'flex',
-  alignItems: 'center',
-  gap: '10px',
-});
-
-export const msLogo = style({
-  width: '32px',
-  height: '32px',
-});
-
-export const msText = style({
-  fontWeight: 500,
-  fontSize: '1.2rem',
-  color: '#222',
-  letterSpacing: '0.01em',
-});
-
-export const topButton = style({
-  background: '#2196f3',
-  color: '#fff',
-  border: 'none',
-  borderRadius: '8px',
-  padding: '8px 20px',
-  fontWeight: 500,
-  fontSize: '1rem',
-  cursor: 'pointer',
-  transition: 'background 0.2s',
-  ':hover': {
-    background: '#1769aa',
-  },
-});
-
 export const main = style({
   flex: 1,
   display: 'flex',
@@ -108,23 +65,11 @@ export const ctaButton = style({
 });
 
 // Responsive styles
-globalStyle('@media (max-width: 600px)', {
-  ':root': {
-    fontSize: '15px',
-  },
-});
-
 globalStyle(`.${landingWrapper}`, {
   fontSize: '16px',
 });
 
 globalStyle('@media (max-width: 600px)', {
-  [`.${header}`]: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    padding: '24px 12px 0 12px',
-    gap: '12px',
-  },
   [`.${headline}`]: {
     fontSize: '2rem',
   },
