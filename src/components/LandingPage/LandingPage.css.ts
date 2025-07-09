@@ -38,18 +38,23 @@ export const headline = style({
   fontWeight: 600,
   fontSize: "96px",
   lineHeight: "115px",
-  marginBottom: "72px",
+  marginBottom: "32px",
   letterSpacing: "-2%",
   textAlign: "center",
   color: "#222",
-  maxWidth: "900px",
+  maxWidth: "1200px",
 });
 
 export const subheadline = style({
-  fontSize: '1.25rem',
-  color: '#444',
-  marginBottom: '36px',
-  maxWidth: '600px',
+  fontFamily: "DM Sans, Segoe UI, Arial, sans-serif",
+  fontWeight: 500,
+  fontSize: "32px",
+  lineHeight: "32px",
+  marginBottom: "32px",
+  letterSpacing: "0",
+  color: "#181D27",
+  textAlign: "center",
+  maxWidth: "800px",
 });
 
 export const ctaButton = style({
