@@ -1,8 +1,6 @@
-// WhyTakeAssessmentSection.css.ts (Full File)
+// WhyTakeAssessmentSection.css.ts
 
 import { style } from "@vanilla-extract/css";
-
-// ... (all the styles from before, from section to cardTitleSingleLine) ...
 
 export const section = style({
   padding: "6rem 0",
@@ -103,8 +101,9 @@ export const cardPlus = style({
 });
 
 export const plusIcon = style({
-  width: "16px",
-  height: "16px",
+  // ✅ CHANGED
+  width: "24px",
+  height: "24px",
   color: "#0BA5EC",
 });
 
@@ -151,8 +150,9 @@ export const cardPlusLeft = style({
 });
 
 export const plusIconLeft = style({
-  width: "16px",
-  height: "16px",
+  // ✅ CHANGED
+  width: "24px",
+  height: "24px",
   color: "#0BA5EC",
 });
 
@@ -168,11 +168,8 @@ export const cardTitleSingleLine = style({
   textAlign: "left",
 });
 
-// ✅ NEW STYLE for positioning the SVG icon.
 export const svgIconOnCard = style({
   position: "absolute",
   top: "24px",
   left: "24px",
 });
-
-// You can now delete the old `staticIconOnCard` style, as it's no longer used.
