@@ -6,7 +6,8 @@ export const formContainer = style({
   boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
   padding: "32px",
   flex: 1,
-  maxWidth: "400px", // ✅ Make it skinnier like Figma
+  maxWidth: "400px",
+  marginTop: "30px",
 });
 
 export const iconContainer = style({
