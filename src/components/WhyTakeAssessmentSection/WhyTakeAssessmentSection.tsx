@@ -17,6 +17,9 @@ export default function WhyTakeAssessmentSection() {
         <div className={styles.cardsGrid}>
           {/* FIRST CARD - COLLAPSED STATE */}
           <div className={styles.cardCollapsed}>
+            <div className={styles.collapsedIconContainer}>
+              <div className={styles.customCircleIcon}></div>
+            </div>
             <div className={styles.cardPlusLeft}>
               <Plus className={styles.plusIconLeft} />
             </div>

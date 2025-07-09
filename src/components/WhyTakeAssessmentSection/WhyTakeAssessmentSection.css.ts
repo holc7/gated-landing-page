@@ -122,6 +122,7 @@ export const cardDescription = style({
   color: "#6b7280",
   lineHeight: "1.5",
 });
+
 export const cardCollapsed = style({
   backgroundColor: "#ffffff",
   border: "1px solid #e5e7eb",
@@ -161,4 +162,58 @@ export const cardTitleSingleLine = style({
   margin: 0,
   whiteSpace: "nowrap",
   textAlign: "left",
+});
+
+export const collapsedIconContainer = style({
+  width: "60px",
+  height: "60px",
+  margin: "0 auto 0 auto",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "50%",
+  position: "absolute",
+  top: "24px",
+  left: "50%",
+  transform: "translateX(-50%)",
+});
+
+export const collapsedIcon = style({
+  width: "32px",
+  height: "32px",
+  color: "#0BA5EC",
+});
+export const customCircleIcon = style({
+  width: "32px",
+  height: "32px",
+  borderRadius: "50%",
+  position: "relative",
+  display: "inline-block",
+
+  // Creates the three distinct segments using a conic gradient.
+  // One blue segment, two gray segments, with transparent gaps.
+  background: `conic-gradient(
+    #0BA5EC 0deg 100deg,      /* Blue part */
+    transparent 100deg 120deg,
+    #e5e7eb 120deg 220deg,    /* Gray part */
+    transparent 220deg 240deg,
+    #e5e7eb 240deg 340deg,    /* Gray part */
+    transparent 340deg 360deg
+  )`,
+
+  // The ::before pseudo-element creates the white center hole.
+  selectors: {
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      // This "inset" creates the ring thickness.
+      top: "3px",
+      left: "3px",
+      right: "3px",
+      bottom: "3px",
+      // Set this to your page's background color.
+      backgroundColor: "#fff",
+      borderRadius: "50%",
+    },
+  },
 });
