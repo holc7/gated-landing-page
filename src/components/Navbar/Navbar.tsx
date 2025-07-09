@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { navbar } from "./Navbar.css";
+import Image from "next/image";
+import { navbar, logo } from "./Navbar.css";
 import { CtaButton } from "@/components/ui/Button/CtaButton";
 
 export default function Navbar() {
@@ -10,6 +10,7 @@ export default function Navbar() {
         alt="Microsoft Logo"
         width={140}
         height={140}
+        className={logo}
       />
       <CtaButton>Free Assessment</CtaButton>
     </div>

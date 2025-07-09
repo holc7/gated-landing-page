@@ -1,4 +1,4 @@
-import { style, styleVariants } from "@vanilla-extract/css";
+import { style, styleVariants, globalStyle } from "@vanilla-extract/css";
 
 export const baseButton = style({
   display: "inline-flex",
@@ -30,4 +30,35 @@ export const buttonVariants = styleVariants({
 
 export const buttonSizes = styleVariants({
   md: {},
+});
+
+// Mobile responsive styles
+globalStyle("@media (max-width: 768px)", {
+  [`.${baseButton}`]: {
+    height: "40px",
+    fontSize: "15px",
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    borderRadius: "20px",
+  },
+});
+
+globalStyle("@media (max-width: 600px)", {
+  [`.${baseButton}`]: {
+    height: "36px",
+    fontSize: "14px",
+    paddingLeft: "16px",
+    paddingRight: "16px",
+    borderRadius: "18px",
+  },
+});
+
+globalStyle("@media (max-width: 480px)", {
+  [`.${baseButton}`]: {
+    height: "32px",
+    fontSize: "13px",
+    paddingLeft: "12px",
+    paddingRight: "12px",
+    borderRadius: "16px",
+  },
 });
