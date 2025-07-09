@@ -4,10 +4,10 @@ import { ContactForm } from "../forms/ContactForm";
 
 export default function WhatsIncludedSection() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby="whats-included-title">
       <div className={styles.sectionContainer}>
         <div className={styles.leftContent}>
-          <h2 className={styles.title}>What&apos;s Included in the Assessment?</h2>
+          <h2 id="whats-included-title" className={styles.title}>What&apos;s Included in the Assessment?</h2>
           <p className={styles.description}>
             This assessment will help you determine how ready your organisation
             is to adopt this next-gen platform and what steps to take to get

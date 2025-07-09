@@ -135,7 +135,7 @@ export function ContactForm() {
           )}
         </div>
 
-        {submitMessage && <div className={styles.message}>{submitMessage}</div>}
+        {submitMessage && <div id="submit-message" className={styles.message}>{submitMessage}</div>}
 
         <p className={styles.privacyText}>
           By using this service, you agree to our Terms of Use and acknowledge
@@ -147,6 +147,7 @@ export function ContactForm() {
           type="submit"
           disabled={isSubmitting}
           className={styles.leftAlignedButton}
+          aria-describedby={submitMessage ? "submit-message" : undefined}
         >
           {isSubmitting ? "Sending..." : "Get free assessment"}
         </CtaButton>

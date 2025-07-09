@@ -6,9 +6,9 @@ import * as styles from "./WhyTakeAssessmentSection.css";
 
 export default function WhyTakeAssessmentSection() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby="why-take-assessment-title">
       <div className={styles.container}>
-        <h2 className={styles.title}>Why Take the Assessment?</h2>
+        <h2 id="why-take-assessment-title" className={styles.title}>Why Take the Assessment?</h2>
 
         <p className={styles.description}>
           Whether you&apos;re just beginning your journey or already exploring
@@ -18,7 +18,7 @@ export default function WhyTakeAssessmentSection() {
 
         <div className={styles.cardsGrid}>
           {/* FIRST CARD - UNCHANGED */}
-          <div className={`${styles.card} ${styles.collapsedLayout}`}>
+          <div className={`${styles.card} ${styles.collapsedLayout}`} role="article" aria-labelledby="card-title-1">
             <svg
               className={styles.svgIconCollapsed}
               width="50"
@@ -49,7 +49,7 @@ export default function WhyTakeAssessmentSection() {
               </g>
             </svg>
             <Plus className={styles.plusIconCollapsed} />
-            <h3 className={styles.titleCollapsed}>
+            <h3 id="card-title-1" className={styles.titleCollapsed}>
               Clarity on Your Data Landscape
             </h3>
           </div>
@@ -57,6 +57,7 @@ export default function WhyTakeAssessmentSection() {
           {/* SECOND CARD - FIXED: First and Second arcs are blue, Third is gray */}
           <div
             className={`${styles.card} ${styles.cardHighlighted} ${styles.expandedLayout}`}
+            role="article" aria-labelledby="card-title-2"
           >
             {/* TOP ITEM */}
             <svg
@@ -95,7 +96,7 @@ export default function WhyTakeAssessmentSection() {
             {/* BOTTOM ITEM */}
             <div>
               <X className={styles.closeIconExpanded} />
-              <h3 className={styles.cardTitle}>
+              <h3 id="card-title-2" className={styles.cardTitle}>
                 Strategic Guidance from Experts
               </h3>
               <p className={styles.cardDescription}>
@@ -106,7 +107,7 @@ export default function WhyTakeAssessmentSection() {
           </div>
 
           {/* THIRD CARD - COPIED FROM FIRST CARD */}
-          <div className={`${styles.card} ${styles.collapsedLayout}`}>
+          <div className={`${styles.card} ${styles.collapsedLayout}`} role="article" aria-labelledby="card-title-3">
             <svg
               className={styles.svgIconCollapsed}
               width="50"
@@ -137,7 +138,7 @@ export default function WhyTakeAssessmentSection() {
               </g>
             </svg>
             <Plus className={styles.plusIconCollapsed} />
-            <h3 className={styles.titleCollapsed}>Accelerate AI Readiness</h3>
+            <h3 id="card-title-3" className={styles.titleCollapsed}>Accelerate AI Readiness</h3>
           </div>
         </div>
       </div>

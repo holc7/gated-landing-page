@@ -7,7 +7,7 @@ import { CtaButton } from "../ui/Button/CtaButton";
 
 export default function WhatWeAssessSection() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby="what-we-assess-title">
       <div className={styles.sectionContainer}>
         {/* RIGHT CONTENT - Assessment Areas */}
         <div className={styles.rightContent}>
@@ -61,7 +61,7 @@ export default function WhatWeAssessSection() {
 
         {/* LEFT CONTENT - Title, Description, Button */}
         <div className={styles.leftContent}>
-          <h2 className={styles.title}>What We Assess?</h2>
+          <h2 id="what-we-assess-title" className={styles.title}>What We Assess?</h2>
 
           <p className={styles.description}>
             Take the guesswork out of modernisation. With the Microsoft Fabric
