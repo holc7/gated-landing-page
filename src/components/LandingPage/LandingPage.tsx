@@ -1,3 +1,4 @@
+import { CtaButton } from "../ui/Button/CtaButton";
 import { main, headline, subheadline, ctaButton } from "./LandingPage.css";
 
 export default function LandingPage() {
@@ -13,7 +14,7 @@ export default function LandingPage() {
         <br />
         and prepare for AI with Microsoft Fabric.
       </p>
-      <button className={ctaButton}>Get free assessment</button>
+      <CtaButton>Get free assessment</CtaButton>
     </main>
   );
 }
