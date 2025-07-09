@@ -4,7 +4,7 @@ import { CtaButton } from "@/components/ui/Button/CtaButton";
 
 export default function Navbar() {
   return (
-    <div className={navbar}>
+    <nav className={navbar}>
       <Image
         src="/navbarLogo.svg"
         alt="Microsoft Logo"
@@ -13,6 +13,6 @@ export default function Navbar() {
         className={logo}
       />
       <CtaButton>Free Assessment</CtaButton>
-    </div>
+    </nav>
   );
 }

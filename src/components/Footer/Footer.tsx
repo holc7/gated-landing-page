@@ -9,9 +9,9 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.leftText}>Company Name All rights reserved</div>
 
-        <a href="/privacy" className={styles.rightText}>
+        <span className={styles.rightText}>
           Privacy policy
-        </a>
+        </span>
       </div>
     </footer>
   );
