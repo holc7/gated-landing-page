@@ -4,7 +4,7 @@ import { style } from "@vanilla-extract/css";
 
 export const section = style({
   padding: "6rem 0",
-  backgroundColor: "#ffffff",
+  background: "linear-gradient(to bottom, #ffffff 0%, #f3faff 100%)", // ✅ GRADIENT: WHITE TOP TO LIGHT BLUE BOTTOM
 });
 
 export const container = style({
