@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { style, globalStyle } from "@vanilla-extract/css";
 
 export const formContainer = style({
   backgroundColor: "#fff",
@@ -120,4 +120,12 @@ export const privacyText = style({
   color: "#414651",
   lineHeight: "1.4",
   marginTop: "8px",
+});
+
+// Tablet responsive styles
+globalStyle("@media (max-width: 768px)", {
+  [`.${formContainer}`]: {
+    margin: "0 auto",
+    marginTop: "50px",
+  },
 });
