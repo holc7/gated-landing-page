@@ -17,7 +17,7 @@ export default function WhyTakeAssessmentSection() {
         </p>
 
         <div className={styles.cardsGrid}>
-          {/* FIRST CARD - Uses collapsedLayout */}
+          {/* FIRST CARD - UNCHANGED */}
           <div className={`${styles.card} ${styles.collapsedLayout}`}>
             <svg
               className={styles.svgIconCollapsed}
@@ -54,7 +54,7 @@ export default function WhyTakeAssessmentSection() {
             </h3>
           </div>
 
-          {/* SECOND CARD - Uses expandedLayout */}
+          {/* SECOND CARD - FIXED: First and Second arcs are blue, Third is gray */}
           <div
             className={`${styles.card} ${styles.cardHighlighted} ${styles.expandedLayout}`}
           >
@@ -68,18 +68,21 @@ export default function WhyTakeAssessmentSection() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <g transform="rotate(-105 25 25)">
+                {/* Blue Arc (Bottom) - FIRST ARC */}
                 <path
                   d="M 43.78 31.84 A 20 20 0 0 1 18.17 43.78"
                   stroke="#0BA5EC"
                   strokeWidth="5"
                   strokeLinecap="round"
                 />
+                {/* Blue Arc (Top-Left) - SECOND ARC */}
                 <path
                   d="M 9.68 37.86 A 20 20 0 0 1 12.14 9.68"
-                  stroke="#e5e7eb"
+                  stroke="#0BA5EC"
                   strokeWidth="5"
                   strokeLinecap="round"
                 />
+                {/* Gray Arc (Top-Right) - THIRD ARC */}
                 <path
                   d="M 21.53 5.31 A 20 20 0 0 1 44.69 21.53"
                   stroke="#e5e7eb"
@@ -102,7 +105,7 @@ export default function WhyTakeAssessmentSection() {
             </div>
           </div>
 
-          {/* THIRD CARD - Uses defaultLayout */}
+          {/* THIRD CARD - UNCHANGED */}
           <div className={`${styles.card} ${styles.defaultLayout}`}>
             <div className={styles.iconContainerDefault}>
               <Zap className={styles.lucideIcon} />
