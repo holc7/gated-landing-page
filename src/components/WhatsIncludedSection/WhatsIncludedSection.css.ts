@@ -6,6 +6,12 @@ export const section = style({
   alignItems: "flex-start",
   gap: "3rem",
   padding: "4rem 0",
+  backgroundColor: "#f6fbff",
+  backgroundImage: `
+    linear-gradient(to right, #f7fbff 0%, #f8fcff 10%, transparent 20%, transparent 80%, #f8fcff 90%, #f5faff 100%),
+    radial-gradient(circle, #c3e5fb 2.5px, transparent 2.5px)
+  `, // ✅ Colors ONLY on sides (0-20% and 80-100%), transparent middle
+  backgroundSize: "100% 100%, 40px 40px",
 });
 
 export const leftContent = style({
