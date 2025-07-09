@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/styles/global.css.ts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Contact Us - Gated Landing Page",
-  description: "Get in touch with our team. We'd love to hear from you and discuss your project.",
+  description:
+    "Get in touch with our team. We'd love to hear from you and discuss your project.",
 };
 
 export default function RootLayout({
