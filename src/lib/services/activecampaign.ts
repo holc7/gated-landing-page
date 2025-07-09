@@ -13,12 +13,13 @@ export interface ContactService {
   getContact(email: string): Promise<ContactServiceResponse & { contact?: ContactFormData }>;
 }
 
+// Real ActiveCampaign API integration
 export class ActiveCampaignService implements ContactService {
   private apiUrl: string;
   private apiKey: string;
 
   constructor(apiUrl: string, apiKey: string) {
-    this.apiUrl = apiUrl.replace(/\/$/, ''); // Remove trailing slash
+    this.apiUrl = apiUrl.replace(/\/$/, '');
     this.apiKey = apiKey;
   }
 
@@ -38,17 +39,16 @@ export class ActiveCampaignService implements ContactService {
           lastName: data.name.split(' ').slice(1).join(' ') || '',
           phone: data.phone || '',
           orgname: data.company,
-          // Custom fields can be added here based on your ActiveCampaign setup
           fieldValues: [
             {
-              field: 'JOB_TITLE', // Replace with your actual field ID
+              field: 'JOB_TITLE',
               value: data.jobTitle,
             },
             {
-              field: 'MESSAGE', // Replace with your actual field ID
+              field: 'MESSAGE',
               value: data.message || '',
             },
-          ].filter(field => field.value), // Only include fields with values
+          ].filter(field => field.value),
         },
       };
 
@@ -151,9 +151,9 @@ export class ActiveCampaignService implements ContactService {
           name: `${contact.firstName} ${contact.lastName}`.trim(),
           email: contact.email,
           company: contact.orgname || '',
-          jobTitle: '', // Would need to fetch from custom fields
+          jobTitle: '',
           phone: contact.phone || undefined,
-          message: undefined, // Would need to fetch from custom fields
+          message: undefined,
         },
       };
     } catch (error) {
@@ -167,6 +167,7 @@ export class ActiveCampaignService implements ContactService {
   }
 }
 
+// Mock service for development and demo purposes
 export class MockActiveCampaignService implements ContactService {
   private contacts: Map<string, ContactFormData & { id: string }> = new Map();
   private nextId = 1;
@@ -177,6 +178,7 @@ export class MockActiveCampaignService implements ContactService {
         const contactId = `mock_${this.nextId++}`;
         this.contacts.set(data.email, { ...data, id: contactId });
         
+        // Log for demo purposes
         console.log('Mock ActiveCampaign: Created contact', { contactId, data });
         
         resolve({
@@ -184,7 +186,7 @@ export class MockActiveCampaignService implements ContactService {
           message: 'Contact created successfully (mock)',
           contactId,
         });
-      }, 500); // Simulate network delay
+      }, 500);
     });
   }
 
@@ -205,6 +207,7 @@ export class MockActiveCampaignService implements ContactService {
         const updatedContact = { ...existingContact, ...data };
         this.contacts.set(updatedContact.email, updatedContact);
         
+        // Log for demo purposes
         console.log('Mock ActiveCampaign: Updated contact', { contactId, data });
         
         resolve({
@@ -212,7 +215,7 @@ export class MockActiveCampaignService implements ContactService {
           message: 'Contact updated successfully (mock)',
           contactId,
         });
-      }, 500); // Simulate network delay
+      }, 500);
     });
   }
 
@@ -231,6 +234,7 @@ export class MockActiveCampaignService implements ContactService {
 
         const { id, ...contactData } = contact;
         
+        // Log for demo purposes
         console.log('Mock ActiveCampaign: Retrieved contact', { contactId: id, email });
         
         resolve({
@@ -239,26 +243,27 @@ export class MockActiveCampaignService implements ContactService {
           contactId: id,
           contact: contactData,
         });
-      }, 300); // Simulate network delay
+      }, 300);
     });
   }
 }
 
-// Service factory that switches based on environment
+// Service factory that switches between real ActiveCampaign and mock service
 export function createContactService(): ContactService {
   const isProduction = process.env.NODE_ENV === 'production';
   const apiUrl = process.env.ACTIVECAMPAIGN_API_URL;
   const apiKey = process.env.ACTIVECAMPAIGN_API_KEY;
 
   if (isProduction && apiUrl && apiKey) {
+    // Use real ActiveCampaign API in production
     return new ActiveCampaignService(apiUrl, apiKey);
   } else {
+    // Use mock service for development/demo
     console.warn('Using mock ActiveCampaign service. Set ACTIVECAMPAIGN_API_URL and ACTIVECAMPAIGN_API_KEY environment variables for production.');
     return new MockActiveCampaignService();
   }
 }
 
-// Error handling class for better error management
 export class ContactServiceError extends Error {
   constructor(
     message: string,
@@ -270,7 +275,6 @@ export class ContactServiceError extends Error {
   }
 }
 
-// Helper function to handle service responses
 export function handleServiceResponse(response: ContactServiceResponse): void {
   if (!response.success) {
     throw new ContactServiceError(

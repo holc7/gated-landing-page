@@ -40,7 +40,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     const errorId = error ? `${inputId}-error` : undefined;
     const helperId = helperText ? `${inputId}-helper` : undefined;
 
-    // Auto-resize functionality
     useEffect(() => {
       if (autoResize && textareaRef.current) {
         const textarea = textareaRef.current;
@@ -69,7 +68,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       .filter(Boolean)
       .join(" ");
 
-    // Combine refs
     const combinedRef = (node: HTMLTextAreaElement | null) => {
       if (textareaRef) {
         textareaRef.current = node;

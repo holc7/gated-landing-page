@@ -34,8 +34,7 @@ export const contactSchema = z.object({
     .optional()
     .refine(
       (value) => {
-        if (!value) return true; // Optional field
-        // Remove all non-digit characters for validation
+        if (!value) return true;
         const digitsOnly = value.replace(/\D/g, '');
         return digitsOnly.length >= 10 && digitsOnly.length <= 15;
       },
@@ -45,7 +44,6 @@ export const contactSchema = z.object({
     )
     .transform((value) => {
       if (!value) return undefined;
-      // Clean up the phone number format
       return value.trim();
     }),
   
@@ -54,7 +52,7 @@ export const contactSchema = z.object({
     .optional()
     .refine(
       (value) => {
-        if (!value) return true; // Optional field
+        if (!value) return true;
         return value.length <= 1000;
       },
       {
@@ -69,7 +67,6 @@ export const contactSchema = z.object({
 
 export type ContactFormData = z.infer<typeof contactSchema>;
 
-// Custom validation messages for better UX
 export const validationMessages = {
   name: {
     required: 'Please enter your full name',
@@ -100,7 +97,6 @@ export const validationMessages = {
   },
 };
 
-// Helper function to get user-friendly error messages
 export const getFieldError = (field: keyof ContactFormData, error: string): string => {
   const fieldMessages = validationMessages[field];
   if (!fieldMessages) return error;

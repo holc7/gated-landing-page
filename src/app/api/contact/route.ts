@@ -4,10 +4,8 @@ import { createContactService, handleServiceResponse, ContactServiceError } from
 
 export async function POST(request: NextRequest) {
   try {
-    // Parse and validate request body
     const body = await request.json();
     
-    // Validate the request body against our schema
     const validationResult = contactSchema.safeParse(body);
     
     if (!validationResult.success) {
@@ -26,13 +24,13 @@ export async function POST(request: NextRequest) {
 
     const contactData = validationResult.data;
 
-    // Create contact service instance
+    // Create contact service (switches between real ActiveCampaign and mock)
     const contactService = createContactService();
 
-    // Try to create the contact
+    // Send data to ActiveCampaign API (or mock service)
     const response = await contactService.createContact(contactData);
 
-    // Handle the service response
+    // Handle the ActiveCampaign response
     try {
       handleServiceResponse(response);
       
@@ -61,7 +59,6 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('API Route Error:', error);
 
-    // Handle JSON parsing errors
     if (error instanceof SyntaxError) {
       return NextResponse.json(
         {
@@ -73,7 +70,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Handle other unexpected errors
     return NextResponse.json(
       {
         success: false,
@@ -85,7 +81,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Handle unsupported methods
 export async function GET() {
   return NextResponse.json(
     {

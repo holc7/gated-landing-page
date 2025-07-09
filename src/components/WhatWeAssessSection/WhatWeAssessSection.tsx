@@ -1,5 +1,3 @@
-// WhatWeAssessSection.tsx
-
 import React from "react";
 import { Globe, BarChart3, Network, Shield, Zap } from "lucide-react";
 import * as styles from "./WhatWeAssessSection.css";
@@ -9,7 +7,6 @@ export default function WhatWeAssessSection() {
   return (
     <section className={styles.section} aria-labelledby="what-we-assess-title">
       <div className={styles.sectionContainer}>
-        {/* RIGHT CONTENT - Assessment Areas */}
         <div className={styles.rightContent}>
           <ul className={styles.assessmentList}>
             <li className={styles.assessmentItem}>
@@ -59,7 +56,6 @@ export default function WhatWeAssessSection() {
           </ul>
         </div>
 
-        {/* LEFT CONTENT - Title, Description, Button */}
         <div className={styles.leftContent}>
           <h2 id="what-we-assess-title" className={styles.title}>What We Assess?</h2>
 

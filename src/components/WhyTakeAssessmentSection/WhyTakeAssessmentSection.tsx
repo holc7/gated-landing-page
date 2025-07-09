@@ -1,5 +1,3 @@
-// WhyTakeAssessmentSection.tsx
-
 import React from "react";
 import { Plus, X } from "lucide-react";
 import * as styles from "./WhyTakeAssessmentSection.css";
@@ -17,7 +15,6 @@ export default function WhyTakeAssessmentSection() {
         </p>
 
         <div className={styles.cardsGrid}>
-          {/* FIRST CARD - UNCHANGED */}
           <div className={`${styles.card} ${styles.collapsedLayout}`} role="article" aria-labelledby="card-title-1">
             <svg
               className={styles.svgIconCollapsed}
@@ -54,12 +51,10 @@ export default function WhyTakeAssessmentSection() {
             </h3>
           </div>
 
-          {/* SECOND CARD - FIXED: First and Second arcs are blue, Third is gray */}
           <div
             className={`${styles.card} ${styles.cardHighlighted} ${styles.expandedLayout}`}
             role="article" aria-labelledby="card-title-2"
           >
-            {/* TOP ITEM */}
             <svg
               className={styles.svgIconExpanded}
               width="50"
@@ -69,21 +64,18 @@ export default function WhyTakeAssessmentSection() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <g transform="rotate(-105 25 25)">
-                {/* Blue Arc (Bottom) - FIRST ARC */}
                 <path
                   d="M 43.78 31.84 A 20 20 0 0 1 18.17 43.78"
                   stroke="#0BA5EC"
                   strokeWidth="5"
                   strokeLinecap="round"
                 />
-                {/* Blue Arc (Top-Left) - SECOND ARC */}
                 <path
                   d="M 9.68 37.86 A 20 20 0 0 1 12.14 9.68"
                   stroke="#0BA5EC"
                   strokeWidth="5"
                   strokeLinecap="round"
                 />
-                {/* Gray Arc (Top-Right) - THIRD ARC */}
                 <path
                   d="M 21.53 5.31 A 20 20 0 0 1 44.69 21.53"
                   stroke="#e5e7eb"
@@ -93,7 +85,6 @@ export default function WhyTakeAssessmentSection() {
               </g>
             </svg>
 
-            {/* BOTTOM ITEM */}
             <div>
               <X className={styles.closeIconExpanded} />
               <h3 id="card-title-2" className={styles.cardTitle}>
@@ -106,7 +97,6 @@ export default function WhyTakeAssessmentSection() {
             </div>
           </div>
 
-          {/* THIRD CARD - COPIED FROM FIRST CARD */}
           <div className={`${styles.card} ${styles.collapsedLayout}`} role="article" aria-labelledby="card-title-3">
             <svg
               className={styles.svgIconCollapsed}
