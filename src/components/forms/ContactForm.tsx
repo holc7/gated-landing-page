@@ -5,9 +5,9 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { CheckCircle, AlertCircle, ExternalLink } from 'lucide-react';
 import { contactSchema, ContactFormData, getFieldError } from '@/lib/validations/contact';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/Input/Input';
+import { Textarea } from '@/components/ui/Textarea/Textarea';
+import { Button } from '@/components/ui/Button/Button';
 import { formContainer, formGrid, formActions, messageContainer, privacyNotice, linkStyle } from './form.css';
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
