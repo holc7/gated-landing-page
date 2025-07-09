@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { style, globalStyle } from "@vanilla-extract/css";
 
 export const section = style({
   display: "flex",
@@ -99,6 +99,7 @@ export const stepNumber03 = style({
   left: "-50px",
   top: "45px",
 });
+
 export const stepContent = style({
   flex: 1,
   paddingLeft: "100px",
@@ -122,3 +123,169 @@ export const stepDescription = style({
 });
 
 export const clearFloat = style({});
+
+// Mobile responsive styles
+globalStyle("@media (max-width: 768px)", {
+  [`.${section}`]: {
+    padding: "3rem 0",
+    backgroundSize: "100% 100%, 30px 30px",
+  },
+  [`.${sectionContainer}`]: {
+    flexDirection: "column",
+    gap: "2rem",
+    paddingLeft: "2rem",
+    paddingRight: "2rem",
+  },
+  [`.${leftContent}`]: {
+    textAlign: "center",
+  },
+  [`.${title}`]: {
+    fontSize: "48px",
+    lineHeight: "56px",
+    marginBottom: "20px",
+  },
+  [`.${description}`]: {
+    fontSize: "20px",
+    lineHeight: "1.3",
+    marginBottom: "28px",
+  },
+  [`.${stepsList}`]: {
+    textAlign: "left",
+  },
+  [`.${stepItem}`]: {
+    maxWidth: "100%",
+    padding: "16px",
+  },
+  [`.${stepNumber}`]: {
+    fontSize: "80px",
+    width: "80px",
+  },
+  [`.${stepNumber01}`]: {
+    left: "-35px",
+    top: "20px",
+  },
+  [`.${stepNumber02}`]: {
+    left: "-35px",
+    top: "25px",
+  },
+  [`.${stepNumber03}`]: {
+    left: "-30px",
+    top: "30px",
+  },
+  [`.${stepContent}`]: {
+    paddingLeft: "60px",
+  },
+});
+
+globalStyle("@media (max-width: 600px)", {
+  [`.${section}`]: {
+    padding: "2rem 0",
+    backgroundSize: "100% 100%, 25px 25px",
+  },
+  [`.${sectionContainer}`]: {
+    gap: "1.5rem",
+    paddingLeft: "1.5rem",
+    paddingRight: "1.5rem",
+  },
+  [`.${leftContent}`]: {
+    textAlign: "center",
+  },
+  [`.${title}`]: {
+    fontSize: "36px",
+    lineHeight: "44px",
+    marginBottom: "16px",
+  },
+  [`.${description}`]: {
+    fontSize: "18px",
+    lineHeight: "1.4",
+    marginBottom: "24px",
+  },
+  [`.${stepsList}`]: {
+    textAlign: "left",
+  },
+  [`.${stepItem}`]: {
+    padding: "12px",
+  },
+  [`.${stepNumber}`]: {
+    fontSize: "60px",
+    width: "60px",
+  },
+  [`.${stepNumber01}`]: {
+    left: "-25px",
+    top: "15px",
+  },
+  [`.${stepNumber02}`]: {
+    left: "-25px",
+    top: "18px",
+  },
+  [`.${stepNumber03}`]: {
+    left: "-22px",
+    top: "22px",
+  },
+  [`.${stepContent}`]: {
+    paddingLeft: "45px",
+  },
+  [`.${stepTitle}`]: {
+    fontSize: "18px",
+  },
+  [`.${stepDescription}`]: {
+    fontSize: "14px",
+  },
+});
+
+globalStyle("@media (max-width: 480px)", {
+  [`.${section}`]: {
+    padding: "1.5rem 0",
+    backgroundSize: "100% 100%, 20px 20px",
+  },
+  [`.${sectionContainer}`]: {
+    gap: "1rem",
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
+  },
+  [`.${leftContent}`]: {
+    textAlign: "center",
+  },
+  [`.${title}`]: {
+    fontSize: "28px",
+    lineHeight: "34px",
+    marginBottom: "12px",
+  },
+  [`.${description}`]: {
+    fontSize: "16px",
+    lineHeight: "1.4",
+    marginBottom: "20px",
+  },
+  [`.${stepsList}`]: {
+    textAlign: "left",
+  },
+  [`.${stepItem}`]: {
+    padding: "10px",
+  },
+  [`.${stepNumber}`]: {
+    fontSize: "45px",
+    width: "45px",
+  },
+  [`.${stepNumber01}`]: {
+    left: "-18px",
+    top: "10px",
+  },
+  [`.${stepNumber02}`]: {
+    left: "-18px",
+    top: "12px",
+  },
+  [`.${stepNumber03}`]: {
+    left: "-16px",
+    top: "15px",
+  },
+  [`.${stepContent}`]: {
+    paddingLeft: "35px",
+  },
+  [`.${stepTitle}`]: {
+    fontSize: "16px",
+    marginBottom: "6px",
+  },
+  [`.${stepDescription}`]: {
+    fontSize: "13px",
+  },
+});
