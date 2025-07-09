@@ -20,8 +20,6 @@ export const sectionContainer = style({
   gap: "3rem",
   maxWidth: "1184px",
   margin: "0 auto",
-  paddingLeft: "1.5rem",
-  paddingRight: "1rem",
   width: "100%",
 });
 

@@ -10,8 +10,6 @@ export const section = style({
 export const container = style({
   maxWidth: "1184px",
   margin: "0 auto",
-  paddingLeft: "1.5rem",
-  paddingRight: "1rem",
   textAlign: "center",
   width: "100%",
   display: "flex",
@@ -45,7 +43,6 @@ export const cardsGrid = style({
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
   gap: "32px",
-  maxWidth: "1140px",
   margin: "0 auto",
 });
 
