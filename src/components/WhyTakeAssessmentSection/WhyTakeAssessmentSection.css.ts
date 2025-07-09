@@ -166,13 +166,15 @@ export const cardTitleSingleLine = style({
   textAlign: "left",
 });
 
-// ✅ NEW COMBINED STYLE: Replaces customCircleIcon and collapsedIconContainer
+// ✅ UPDATED STYLE: Icon is now bigger and on the left
+// WhyTakeAssessmentSection.css.ts (Partial - only showing the changed part)
+
+// ✅ UPDATED STYLE: Icon is now 50px and proportionally correct
 export const staticIconOnCard = style({
-  // Visuals
-  width: "32px",
-  height: "32px",
+  // Visuals: Made smaller to 50px
+  width: "50px", // ✅ Changed
+  height: "50px", // ✅ Changed
   borderRadius: "50%",
-  display: "inline-block",
   background: `conic-gradient(
     #0BA5EC 0deg 100deg,
     transparent 100deg 120deg,
@@ -185,18 +187,18 @@ export const staticIconOnCard = style({
     "&::before": {
       content: '""',
       position: "absolute",
-      top: "3px",
-      left: "3px",
-      right: "3px",
-      bottom: "3px",
+      // Reduced thickness to match smaller size
+      top: "4px",    // ✅ Changed
+      left: "4px",   // ✅ Changed
+      right: "4px",  // ✅ Changed
+      bottom: "4px", // ✅ Changed
       backgroundColor: "#fff",
       borderRadius: "50%",
     },
   },
 
-  // Positioning
+  // Positioning: Stays on the left
   position: "absolute",
   top: "24px",
-  left: "50%",
-  transform: "translateX(-50%)",
+  left: "24px",
 });
