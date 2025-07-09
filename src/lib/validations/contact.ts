@@ -105,10 +105,10 @@ export const getFieldError = (field: keyof ContactFormData, error: string): stri
   const fieldMessages = validationMessages[field];
   if (!fieldMessages) return error;
   
-  if (error.includes('required')) return fieldMessages.required || error;
-  if (error.includes('too short') || error.includes('at least')) return fieldMessages.tooShort || error;
-  if (error.includes('too long') || error.includes('less than')) return fieldMessages.tooLong || error;
-  if (error.includes('invalid') || error.includes('valid')) return fieldMessages.invalid || error;
+  if (error.includes('required') && 'required' in fieldMessages) return fieldMessages.required || error;
+  if ((error.includes('too short') || error.includes('at least')) && 'tooShort' in fieldMessages) return fieldMessages.tooShort || error;
+  if ((error.includes('too long') || error.includes('less than')) && 'tooLong' in fieldMessages) return fieldMessages.tooLong || error;
+  if ((error.includes('invalid') || error.includes('valid')) && 'invalid' in fieldMessages) return fieldMessages.invalid || error;
   
   return error;
 };

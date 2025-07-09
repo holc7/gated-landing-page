@@ -1,4 +1,4 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { globalStyle, keyframes } from '@vanilla-extract/css';
 import { vars } from './theme.css';
 
 // CSS Reset
@@ -210,4 +210,10 @@ globalStyle('.px-md', {
 globalStyle('.px-lg', {
   paddingLeft: vars.spacing.lg,
   paddingRight: vars.spacing.lg,
+});
+
+// Animations
+export const spin = keyframes({
+  from: { transform: 'rotate(0deg)' },
+  to: { transform: 'rotate(360deg)' },
 });
