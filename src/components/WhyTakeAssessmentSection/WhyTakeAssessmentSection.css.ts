@@ -3,7 +3,7 @@
 import { style } from "@vanilla-extract/css";
 
 export const section = style({
-  padding: "6rem 0",
+  padding: "2rem 0 6rem 0",
   background: "linear-gradient(to bottom, #ffffff 0%, #f3faff 100%)", // ✅ GRADIENT: WHITE TOP TO LIGHT BLUE BOTTOM
 });
 
