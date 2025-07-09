@@ -1,6 +1,6 @@
 // WhyTakeAssessmentSection.css.ts
 
-import { style } from "@vanilla-extract/css";
+import { style, globalStyle } from "@vanilla-extract/css";
 
 export const section = style({
   padding: "2rem 0 6rem 0",
@@ -180,4 +180,204 @@ export const lucideIcon = style({
   width: "32px",
   height: "32px",
   color: "#0BA5EC",
+});
+
+// Mobile responsive styles
+globalStyle("@media (max-width: 768px)", {
+  [`.${section}`]: {
+    padding: "1.5rem 0 4rem 0",
+  },
+  [`.${container}`]: {
+    paddingLeft: "2rem",
+    paddingRight: "2rem",
+  },
+  [`.${title}`]: {
+    fontSize: "48px",
+    lineHeight: "56px",
+    marginBottom: "20px",
+  },
+  [`.${description}`]: {
+    fontSize: "20px",
+    lineHeight: "1.4",
+    marginBottom: "48px",
+    margin: "0 auto 48px auto",
+  },
+  [`.${cardsGrid}`]: {
+    gridTemplateColumns: "1fr",
+    gap: "24px",
+    maxWidth: "500px",
+  },
+  [`.${card}`]: {
+    minHeight: "280px",
+  },
+  [`.${collapsedLayout}`]: {
+    padding: "20px",
+  },
+  [`.${expandedLayout}`]: {
+    padding: "24px 20px",
+  },
+  [`.${svgIconCollapsed}`]: {
+    top: "20px",
+    left: "20px",
+  },
+  [`.${plusIconCollapsed}`]: {
+    bottom: "60px",
+    left: "20px",
+    width: "20px",
+    height: "20px",
+  },
+  [`.${titleCollapsed}`]: {
+    fontSize: "18px",
+    bottom: "20px",
+    left: "20px",
+    right: "20px",
+  },
+  [`.${svgIconExpanded}`]: {
+    width: "40px",
+    height: "40px",
+  },
+  [`.${closeIconExpanded}`]: {
+    width: "20px",
+    height: "20px",
+  },
+  [`.${cardTitle}`]: {
+    fontSize: "18px",
+  },
+  [`.${cardDescription}`]: {
+    fontSize: "14px",
+  },
+});
+
+globalStyle("@media (max-width: 600px)", {
+  [`.${section}`]: {
+    padding: "1rem 0 3rem 0",
+  },
+  [`.${container}`]: {
+    paddingLeft: "1.5rem",
+    paddingRight: "1.5rem",
+  },
+  [`.${title}`]: {
+    fontSize: "36px",
+    lineHeight: "44px",
+    marginBottom: "16px",
+  },
+  [`.${description}`]: {
+    fontSize: "18px",
+    lineHeight: "1.4",
+    marginBottom: "36px",
+    margin: "0 auto 36px auto",
+  },
+  [`.${cardsGrid}`]: {
+    gap: "20px",
+    maxWidth: "400px",
+  },
+  [`.${card}`]: {
+    minHeight: "240px",
+    borderRadius: "12px",
+  },
+  [`.${collapsedLayout}`]: {
+    padding: "16px",
+  },
+  [`.${expandedLayout}`]: {
+    padding: "20px 16px",
+  },
+  [`.${svgIconCollapsed}`]: {
+    top: "16px",
+    left: "16px",
+  },
+  [`.${plusIconCollapsed}`]: {
+    bottom: "50px",
+    left: "16px",
+    width: "18px",
+    height: "18px",
+  },
+  [`.${titleCollapsed}`]: {
+    fontSize: "16px",
+    bottom: "16px",
+    left: "16px",
+    right: "16px",
+  },
+  [`.${svgIconExpanded}`]: {
+    width: "35px",
+    height: "35px",
+  },
+  [`.${closeIconExpanded}`]: {
+    width: "18px",
+    height: "18px",
+  },
+  [`.${cardTitle}`]: {
+    fontSize: "16px",
+    marginBottom: "12px",
+  },
+  [`.${cardDescription}`]: {
+    fontSize: "13px",
+  },
+});
+
+globalStyle("@media (max-width: 480px)", {
+  [`.${section}`]: {
+    padding: "0.75rem 0 2rem 0",
+  },
+  [`.${container}`]: {
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
+  },
+  [`.${title}`]: {
+    fontSize: "28px",
+    lineHeight: "34px",
+    marginBottom: "12px",
+  },
+  [`.${description}`]: {
+    fontSize: "16px",
+    lineHeight: "1.4",
+    marginBottom: "28px",
+    margin: "0 auto 28px auto",
+  },
+  [`.${cardsGrid}`]: {
+    gap: "16px",
+    maxWidth: "100%",
+  },
+  [`.${card}`]: {
+    minHeight: "200px",
+    borderRadius: "10px",
+  },
+  [`.${collapsedLayout}`]: {
+    padding: "12px",
+  },
+  [`.${expandedLayout}`]: {
+    padding: "16px 12px",
+  },
+  [`.${svgIconCollapsed}`]: {
+    top: "12px",
+    left: "12px",
+  },
+  [`.${plusIconCollapsed}`]: {
+    bottom: "40px",
+    left: "12px",
+    width: "16px",
+    height: "16px",
+  },
+  [`.${titleCollapsed}`]: {
+    fontSize: "14px",
+    bottom: "12px",
+    left: "12px",
+    right: "12px",
+    whiteSpace: "normal",
+  },
+  [`.${svgIconExpanded}`]: {
+    width: "30px",
+    height: "30px",
+  },
+  [`.${closeIconExpanded}`]: {
+    width: "16px",
+    height: "16px",
+    marginBottom: "12px",
+  },
+  [`.${cardTitle}`]: {
+    fontSize: "14px",
+    marginBottom: "8px",
+  },
+  [`.${cardDescription}`]: {
+    fontSize: "12px",
+  },
 });
