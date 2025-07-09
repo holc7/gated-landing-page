@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import LandingPage from "@/components/LandingPage/LandingPage";
 import WhatsIncludedSection from "@/components/WhatsIncludedSection/WhatsIncludedSection";
+import WhyTakeAssessmentSection from "@/components/WhyTakeAssessmentSection/WhyTakeAssessmentSection";
 
 export default function Home() {
   return (
@@ -12,8 +13,8 @@ export default function Home() {
         <LandingPage />
       </div>
 
-      {/* Next section - white background below */}
       <WhatsIncludedSection />
+      <WhyTakeAssessmentSection />
     </>
   );
 }
