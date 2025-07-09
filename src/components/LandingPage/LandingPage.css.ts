@@ -34,12 +34,15 @@ export const main = style({
 });
 
 export const headline = style({
-  fontSize: '3rem',
-  fontWeight: 700,
-  color: '#222',
-  marginBottom: '24px',
-  lineHeight: 1.1,
-  maxWidth: '900px',
+  fontFamily: "DM Sans, Segoe UI, Arial, sans-serif",
+  fontWeight: 600,
+  fontSize: "96px",
+  lineHeight: "115px",
+  marginBottom: "72px",
+  letterSpacing: "-2%",
+  textAlign: "center",
+  color: "#222",
+  maxWidth: "900px",
 });
 
 export const subheadline = style({
