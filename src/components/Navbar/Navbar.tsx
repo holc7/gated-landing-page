@@ -18,9 +18,7 @@ export default function Navbar() {
         </div>
         <span className={logoText}>Microsoft</span>
       </div>
-      <CtaButton variant="secondary" size="md">
-        Free Assessment
-      </CtaButton>
+      <CtaButton>Free Assessment</CtaButton>
     </div>
   );
 } 
