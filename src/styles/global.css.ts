@@ -212,6 +212,20 @@ globalStyle('.px-lg', {
   paddingRight: vars.spacing.lg,
 });
 
+globalStyle(".page-container", {
+  minHeight: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "#fff",
+  backgroundImage:
+    "radial-gradient(circle, rgba(11, 165, 236, 0.3) 2.5px, transparent 2.5px)",
+  backgroundSize: "40px 40px",
+  position: "relative",
+  padding: "0",
+});
+
 // Animations
 export const spin = keyframes({
   from: { transform: 'rotate(0deg)' },
