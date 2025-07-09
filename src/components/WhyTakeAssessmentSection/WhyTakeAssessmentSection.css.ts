@@ -11,6 +11,9 @@ export const container = style({
   paddingLeft: "1.5rem",
   paddingRight: "1rem",
   textAlign: "center",
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
 });
 
 export const title = style({
@@ -123,31 +126,32 @@ export const cardCollapsed = style({
   backgroundColor: "#ffffff",
   border: "1px solid #e5e7eb",
   borderRadius: "16px",
-  padding: "6px 6px 6px 4px", // decreased side padding
-  textAlign: "center",
+  padding: "24px",
+  textAlign: "left",
   position: "relative",
   transition: "all 0.3s ease",
   minHeight: "200px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "flex-end",
-  alignItems: "center",
 });
 
-export const cardPlusCenter = style({
-  marginBottom: "16px",
+export const cardPlusLeft = style({
+  position: "absolute",
+  bottom: "70px",
+  left: "24px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
 });
 
-export const plusIconCenter = style({
+export const plusIconLeft = style({
   width: "16px",
   height: "16px",
   color: "#0BA5EC",
 });
 
-export const cardTitleAtBottom = style({
+export const cardTitleSingleLine = style({
   fontFamily:
     "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
   fontSize: "20px",
@@ -155,4 +159,6 @@ export const cardTitleAtBottom = style({
   color: "#000000",
   lineHeight: "1.3",
   margin: 0,
+  whiteSpace: "nowrap",
+  textAlign: "left",
 });

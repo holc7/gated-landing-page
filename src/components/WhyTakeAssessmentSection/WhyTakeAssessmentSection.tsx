@@ -17,10 +17,10 @@ export default function WhyTakeAssessmentSection() {
         <div className={styles.cardsGrid}>
           {/* FIRST CARD - COLLAPSED STATE */}
           <div className={styles.cardCollapsed}>
-            <div className={styles.cardPlusCenter}>
-              <Plus className={styles.plusIconCenter} />
+            <div className={styles.cardPlusLeft}>
+              <Plus className={styles.plusIconLeft} />
             </div>
-            <h3 className={styles.cardTitleAtBottom}>
+            <h3 className={styles.cardTitleSingleLine}>
               Clarity on Your Data Landscape
             </h3>
           </div>
