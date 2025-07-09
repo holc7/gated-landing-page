@@ -17,5 +17,6 @@ export const navbar = style({
   paddingLeft: "1.5rem", // ✅ spacing-3xl (left)
   backgroundColor: "#FFFFFF", // ✅ Figma color
   borderRadius: "32px", // ✅ radius-4xl
-  boxShadow: "0 14px 14px rgba(0, 0, 0, 0.04)", // ✅ Figma drop shadow
+  boxShadow: "0 14px 14px rgba(0, 0, 0, 0.04)",
+  zIndex: 1000,
 });
