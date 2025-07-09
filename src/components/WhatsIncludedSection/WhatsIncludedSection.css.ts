@@ -33,20 +33,20 @@ export const title = style({
   fontFamily:
     "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
   fontSize: "72px",
-  fontWeight: 600, // SemiBold
+  fontWeight: 600,
   lineHeight: "80px",
-  letterSpacing: "-0.02em", // -2%
-  marginBottom: "24px", // ✅ Reduced space between title and description
+  letterSpacing: "-0.02em",
+  marginBottom: "24px",
 });
 
 export const description = style({
   fontFamily:
     "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-  fontSize: "24px", // ✅ Updated from 20px
-  fontWeight: 500, // ✅ Medium weight
-  lineHeight: "100%", // ✅ 100% line height
-  letterSpacing: "0", // ✅ 0% letter spacing
-  marginBottom: "32px", // ✅ Paragraph spacing from Figma
+  fontSize: "24px",
+  fontWeight: 500,
+  lineHeight: "100%",
+  letterSpacing: "0",
+  marginBottom: "32px",
 });
 
 export const stepsList = style({
@@ -56,16 +56,17 @@ export const stepsList = style({
 });
 
 export const stepItem = style({
+  overflow: "hidden",
   marginBottom: "16px",
   display: "flex",
-  alignItems: "center", // ✅ Center align to prevent cutoff
-  gap: "16px", // ✅ Smaller gap since number is bigger
+  alignItems: "flex-start",
+  gap: "16px",
   backgroundColor: "#ffffff",
   padding: "20px",
   borderRadius: "12px",
   maxWidth: "600px",
   width: "100%",
-  position: "relative", // ✅ For positioning the number
+  position: "relative",
 
   ":last-child": {
     marginBottom: 0,
@@ -73,39 +74,51 @@ export const stepItem = style({
 });
 
 export const stepNumber = style({
-  fontSize: "80px", // ✅ Bigger size
+  fontSize: "125px",
   fontWeight: 600,
-  color: "#e5f2fd", // ✅ New color
+  color: "#e5f2fd",
   lineHeight: "1",
-  flexShrink: 0,
-  width: "100px", // ✅ Wider to accommodate bigger size
-  textAlign: "left", // ✅ Align left
-  position: "relative",
-  left: "-50px", // ✅ Push more to the left
-  top: "40px", // ✅ Push more down
+  position: "absolute",
+  width: "120px",
+  textAlign: "center",
+  zIndex: 1,
+  pointerEvents: "none",
 });
 
+export const stepNumber01 = style({
+  left: "-55px",
+  top: "30px",
+});
+
+export const stepNumber02 = style({
+  left: "-55px",
+  top: "35px",
+});
+
+export const stepNumber03 = style({
+  left: "-50px",
+  top: "45px",
+});
 export const stepContent = style({
-  flex: 1, // ✅ Take remaining space
+  flex: 1,
+  paddingLeft: "100px",
 });
 
 export const stepTitle = style({
   fontFamily:
     "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-  fontWeight: 500, // ✅ Medium weight
-  fontSize: "20px", // ✅ From Figma specs
-  color: "#000000", // ✅ Black color
+  fontWeight: 500,
+  fontSize: "20px",
+  color: "#000000",
   marginBottom: "8px",
 });
 
 export const stepDescription = style({
   fontFamily:
     "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-  fontSize: "16px", // ✅ From Figma specs
-  color: "#414651", // ✅ Gray color from Figma
+  fontSize: "16px",
+  color: "#414651",
   lineHeight: "1.5",
 });
 
-export const clearFloat = style({
-  // ✅ No longer needed with flexbox
-});
+export const clearFloat = style({});
