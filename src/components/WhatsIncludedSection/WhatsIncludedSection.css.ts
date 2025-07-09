@@ -9,20 +9,19 @@ export const section = style({
   backgroundImage: `
     linear-gradient(to right, #f7fbff 0%, #f8fcff 15%, transparent 35%, transparent 65%, #f8fcff 85%, #f5faff 100%),
     radial-gradient(circle, #c3e5fb 2.5px, transparent 2.5px)
-  `, // ✅ transparent zone: 35%-65% (smaller)
+  `,
   backgroundSize: "100% 100%, 40px 40px",
 });
 
-// ✅ Add new container style
 export const sectionContainer = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "flex-start",
   gap: "3rem",
-  maxWidth: "1184px", // Same as navbar
+  maxWidth: "1184px",
   margin: "0 auto",
-  paddingLeft: "1.5rem", // ✅ Same as navbar
-  paddingRight: "1rem", // ✅ Same as navbar
+  paddingLeft: "1.5rem",
+  paddingRight: "1rem",
   width: "100%",
 });
 
@@ -31,14 +30,23 @@ export const leftContent = style({
 });
 
 export const title = style({
-  fontSize: "40px",
-  fontWeight: 700,
-  marginBottom: "16px",
+  fontFamily:
+    "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  fontSize: "72px",
+  fontWeight: 600, // SemiBold
+  lineHeight: "80px",
+  letterSpacing: "-0.02em", // -2%
+  marginBottom: "24px", // ✅ Reduced space between title and description
 });
 
 export const description = style({
-  fontSize: "20px",
-  marginBottom: "32px",
+  fontFamily:
+    "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  fontSize: "24px", // ✅ Updated from 20px
+  fontWeight: 500, // ✅ Medium weight
+  lineHeight: "100%", // ✅ 100% line height
+  letterSpacing: "0", // ✅ 0% letter spacing
+  marginBottom: "32px", // ✅ Paragraph spacing from Figma
 });
 
 export const stepsList = style({
@@ -82,64 +90,4 @@ export const stepDescription = style({
 
 export const clearFloat = style({
   clear: "both",
-});
-
-export const formContainer = style({
-  flex: 1,
-
-  background: "#fff",
-  borderRadius: "16px",
-  boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
-  padding: "32px",
-});
-
-export const formTitle = style({
-  fontSize: "22px",
-  fontWeight: 700,
-  marginBottom: "16px",
-});
-
-export const inputFull = style({
-  width: "100%",
-  marginBottom: "12px",
-  padding: "10px",
-  borderRadius: "8px",
-  border: "1px solid #ccc",
-});
-
-export const inputRow = style({
-  display: "flex",
-  gap: "8px",
-  marginBottom: "12px",
-});
-
-export const inputHalf = style({
-  flex: 1,
-  padding: "10px",
-  borderRadius: "8px",
-  border: "1px solid #ccc",
-});
-
-export const inputLast = style({
-  width: "100%",
-  marginBottom: "16px",
-  padding: "10px",
-  borderRadius: "8px",
-  border: "1px solid #ccc",
-});
-
-export const submitButton = style({
-  width: "100%",
-  background: "#0BA5EC",
-  color: "#fff",
-  border: "none",
-  borderRadius: "8px",
-  padding: "12px",
-  fontWeight: 600,
-  fontSize: "16px",
-  cursor: "pointer",
-
-  ":hover": {
-    background: "#0991D1",
-  },
 });
