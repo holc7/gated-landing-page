@@ -4,7 +4,7 @@ import { style } from "@vanilla-extract/css";
 
 export const footer = style({
   backgroundColor: "#1a1a1a",
-  padding: "2rem 0",
+  padding: "1.5rem 0",
 });
 
 export const container = style({
@@ -40,19 +40,4 @@ export const rightText = style({
   },
 });
 
-export const socialIcons = style({
-  display: "flex",
-  gap: "16px",
-  alignItems: "center",
-});
-
-export const socialIcon = style({
-  width: "24px",
-  height: "24px",
-  opacity: 0.7,
-  transition: "opacity 0.3s ease",
-
-  ":hover": {
-    opacity: 1,
-  },
-});
+ 
