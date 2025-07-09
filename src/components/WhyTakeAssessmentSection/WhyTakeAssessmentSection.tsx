@@ -15,18 +15,14 @@ export default function WhyTakeAssessmentSection() {
         </p>
 
         <div className={styles.cardsGrid}>
-          <div className={styles.card}>
-            <div className={styles.iconContainer}>
-              <RotateCcw className={styles.icon} />
+          {/* FIRST CARD - COLLAPSED STATE */}
+          <div className={styles.cardCollapsed}>
+            <div className={styles.cardPlusCenter}>
+              <Plus className={styles.plusIconCenter} />
             </div>
-            <div className={styles.cardPlus}>
-              <Plus className={styles.plusIcon} />
-            </div>
-            <h3 className={styles.cardTitle}>Clarity on Your Data Landscape</h3>
-            <p className={styles.cardDescription}>
-              Get expert insights tailored to your organisation's goals, helping
-              you plan a smarter, faster path to modern analytics.
-            </p>
+            <h3 className={styles.cardTitleAtBottom}>
+              Clarity on Your Data Landscape
+            </h3>
           </div>
 
           <div className={`${styles.card} ${styles.cardHighlighted}`}>

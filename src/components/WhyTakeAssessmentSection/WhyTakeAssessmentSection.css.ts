@@ -85,8 +85,9 @@ export const icon = style({
 
 export const cardPlus = style({
   position: "absolute",
-  top: "16px",
-  right: "16px",
+  bottom: "24px",
+  left: "50%",
+  transform: "translateX(-50%)",
   width: "24px",
   height: "24px",
   display: "flex",
@@ -117,4 +118,41 @@ export const cardDescription = style({
   fontWeight: 400,
   color: "#6b7280",
   lineHeight: "1.5",
+});
+export const cardCollapsed = style({
+  backgroundColor: "#ffffff",
+  border: "1px solid #e5e7eb",
+  borderRadius: "16px",
+  padding: "6px 6px 6px 4px", // decreased side padding
+  textAlign: "center",
+  position: "relative",
+  transition: "all 0.3s ease",
+  minHeight: "200px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "flex-end",
+  alignItems: "center",
+});
+
+export const cardPlusCenter = style({
+  marginBottom: "16px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+export const plusIconCenter = style({
+  width: "16px",
+  height: "16px",
+  color: "#0BA5EC",
+});
+
+export const cardTitleAtBottom = style({
+  fontFamily:
+    "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  fontSize: "20px",
+  fontWeight: 600,
+  color: "#000000",
+  lineHeight: "1.3",
+  margin: 0,
 });
