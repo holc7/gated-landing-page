@@ -37,6 +37,7 @@ export const title = style({
   lineHeight: "80px",
   letterSpacing: "-0.02em",
   marginBottom: "24px",
+  color: "#181D27",
 });
 
 export const description = style({
@@ -47,6 +48,7 @@ export const description = style({
   lineHeight: "100%",
   letterSpacing: "0",
   marginBottom: "32px",
+  color: "#000000",
 });
 
 export const stepsList = style({

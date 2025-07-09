@@ -41,7 +41,7 @@ export const headline = style({
   marginBottom: "32px",
   letterSpacing: "-2%",
   textAlign: "center",
-  color: "#222",
+  color: "#181D27",
   maxWidth: "1200px",
 });
 

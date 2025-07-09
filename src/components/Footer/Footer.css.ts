@@ -30,7 +30,7 @@ export const rightText = style({
   fontFamily:
     "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
   fontSize: "14px",
-  color: "#5fa4e6",
+  color: "#36BFFA",
   fontWeight: 400,
   textDecoration: "none",
   cursor: "pointer",

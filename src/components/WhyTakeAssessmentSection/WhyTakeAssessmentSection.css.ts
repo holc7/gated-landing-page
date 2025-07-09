@@ -25,7 +25,7 @@ export const title = style({
   fontWeight: 600,
   lineHeight: "80px",
   letterSpacing: "-0.02em",
-  color: "#000000",
+  color: "#181D27",
   marginBottom: "24px",
 });
 
@@ -35,7 +35,7 @@ export const description = style({
   fontSize: "24px",
   fontWeight: 500,
   lineHeight: "1.4",
-  color: "#333333",
+  color: "#181D27",
   marginBottom: "72px",
   maxWidth: "800px",
   margin: "0 auto 72px auto",
@@ -172,7 +172,7 @@ export const cardDescription = style({
   fontFamily: "'DM Sans', sans-serif",
   fontSize: "16px",
   fontWeight: 400,
-  color: "#6b7280",
+  color: "#535862",
   lineHeight: "1.5",
 });
 

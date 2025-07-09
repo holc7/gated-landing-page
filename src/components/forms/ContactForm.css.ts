@@ -25,7 +25,7 @@ export const icon = style({
 export const title = style({
   fontSize: "22px",
   fontWeight: 700,
-  color: "#000",
+  color: "#000000",
   marginBottom: "16px",
   lineHeight: "1.3",
 });
@@ -62,7 +62,7 @@ export const fieldRow = style({
 export const label = style({
   fontSize: "14px",
   fontWeight: 500,
-  color: "#374151",
+  color: "#414651",
 });
 
 export const input = style({
@@ -117,7 +117,7 @@ export const message = style({
 
 export const privacyText = style({
   fontSize: "12px",
-  color: "#6b7280",
+  color: "#414651",
   lineHeight: "1.4",
   marginTop: "8px",
 });

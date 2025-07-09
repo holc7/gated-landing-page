@@ -38,7 +38,7 @@ export const title = style({
   lineHeight: "80px",
   letterSpacing: "-0.02em",
   marginBottom: "24px",
-  color: "#000000",
+  color: "#181D27",
 });
 
 export const description = style({
@@ -49,7 +49,7 @@ export const description = style({
   lineHeight: "1.4",
   letterSpacing: "0",
   marginBottom: "32px",
-  color: "#333333",
+  color: "#000000",
 });
 
 export const startButton = style({
