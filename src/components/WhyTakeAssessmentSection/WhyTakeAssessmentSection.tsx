@@ -1,3 +1,5 @@
+// WhyTakeAssessmentSection.tsx
+
 import React from "react";
 import { RotateCcw, Plus, Zap } from "lucide-react";
 import * as styles from "./WhyTakeAssessmentSection.css";
@@ -17,9 +19,9 @@ export default function WhyTakeAssessmentSection() {
         <div className={styles.cardsGrid}>
           {/* FIRST CARD - COLLAPSED STATE */}
           <div className={styles.cardCollapsed}>
-            <div className={styles.collapsedIconContainer}>
-              <div className={styles.customCircleIcon}></div>
-            </div>
+            {/* ✅ FIXED: Replaced nested divs with a single div using the new style */}
+            <div className={styles.staticIconOnCard}></div>
+
             <div className={styles.cardPlusLeft}>
               <Plus className={styles.plusIconLeft} />
             </div>
@@ -28,6 +30,7 @@ export default function WhyTakeAssessmentSection() {
             </h3>
           </div>
 
+          {/* SECOND CARD */}
           <div className={`${styles.card} ${styles.cardHighlighted}`}>
             <div className={styles.iconContainer}>
               <RotateCcw className={styles.icon} />
@@ -44,6 +47,7 @@ export default function WhyTakeAssessmentSection() {
             </p>
           </div>
 
+          {/* THIRD CARD */}
           <div className={styles.card}>
             <div className={styles.iconContainer}>
               <Zap className={styles.icon} />
