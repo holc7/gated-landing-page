@@ -7,7 +7,7 @@ export default function WhatsIncludedSection() {
     <section className={styles.section}>
       <div className={styles.sectionContainer}>
         <div className={styles.leftContent}>
-          <h2 className={styles.title}>What's Included in the Assessment?</h2>
+          <h2 className={styles.title}>What&apos;s Included in the Assessment?</h2>
           <p className={styles.description}>
             This assessment will help you determine how ready your organisation
             is to adopt this next-gen platform and what steps to take to get
@@ -34,7 +34,7 @@ export default function WhatsIncludedSection() {
                 <div className={styles.stepTitle}>Readiness Analysis</div>
                 <div className={styles.stepDescription}>
                   We identify gaps and opportunities to help you align with
-                  Microsoft Fabric's architecture and capabilities.
+                  Microsoft Fabric&apos;s architecture and capabilities.
                 </div>
               </div>
             </li>

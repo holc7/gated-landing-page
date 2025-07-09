@@ -1,5 +1,5 @@
 import { CtaButton } from "../ui/Button/CtaButton";
-import { main, headline, subheadline, ctaButton } from "./LandingPage.css";
+import { main, headline, subheadline } from "./LandingPage.css";
 
 export default function LandingPage() {
   return (

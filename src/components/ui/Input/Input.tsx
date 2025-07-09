@@ -1,7 +1,6 @@
 import React, { useId } from "react";
-import { vars } from "@/styles/theme.css";
 import { AlertCircle } from "lucide-react";
-import * as styles from "./input.css";
+import * as styles from "./Input.css";
 
 interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {

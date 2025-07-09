@@ -1,7 +1,7 @@
 // WhyTakeAssessmentSection.tsx
 
 import React from "react";
-import { RotateCcw, Plus, Zap, X } from "lucide-react";
+import { Plus, X } from "lucide-react";
 import * as styles from "./WhyTakeAssessmentSection.css";
 
 export default function WhyTakeAssessmentSection() {
@@ -11,7 +11,7 @@ export default function WhyTakeAssessmentSection() {
         <h2 className={styles.title}>Why Take the Assessment?</h2>
 
         <p className={styles.description}>
-          Whether you're just beginning your journey or already exploring
+          Whether you&apos;re just beginning your journey or already exploring
           Fabric, this personalised assessment helps identify gaps,
           opportunities, and the fastest path to unified, intelligent data.
         </p>
@@ -99,7 +99,7 @@ export default function WhyTakeAssessmentSection() {
                 Strategic Guidance from Experts
               </h3>
               <p className={styles.cardDescription}>
-                Get expert insights tailored to your organisation's goals,
+                Get expert insights tailored to your organisation&apos;s goals,
                 helping you plan a smarter, faster path to modern analytics.
               </p>
             </div>

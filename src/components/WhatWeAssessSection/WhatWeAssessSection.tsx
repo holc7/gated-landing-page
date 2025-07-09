@@ -65,7 +65,7 @@ export default function WhatWeAssessSection() {
 
           <p className={styles.description}>
             Take the guesswork out of modernisation. With the Microsoft Fabric
-            Assessment, you'll get a clear view of your current data and
+            Assessment, you&apos;ll get a clear view of your current data and
             analytics setup, and expert guidance on how to optimise it for an
             AI-powered future.
           </p>

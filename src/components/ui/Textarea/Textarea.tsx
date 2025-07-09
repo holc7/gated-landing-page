@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useId } from "react";
 import { vars } from "@/styles/theme.css";
 import { AlertCircle } from "lucide-react";
-import * as styles from "./textarea.css";
+import * as styles from "./Textarea.css";
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {

@@ -52,7 +52,7 @@ export function ContactForm() {
 
       setSubmitMessage("Thank you! We'll get back to you soon.");
       reset();
-    } catch (error) {
+    } catch {
       setSubmitMessage("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
