@@ -3,6 +3,7 @@
 import React from "react";
 import { Globe, BarChart3, Network, Shield, Zap } from "lucide-react";
 import * as styles from "./WhatWeAssessSection.css";
+import { CtaButton } from "../ui/Button/CtaButton";
 
 export default function WhatWeAssessSection() {
   return (
@@ -69,7 +70,7 @@ export default function WhatWeAssessSection() {
             AI-powered future.
           </p>
 
-          <button className={styles.startButton}>Start now</button>
+          <CtaButton>Start now</CtaButton>
         </div>
       </div>
     </section>
