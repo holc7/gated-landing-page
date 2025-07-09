@@ -1,4 +1,4 @@
-// Styles for WhatWeAssessSection will go here // WhatWeAssessSection.css.ts
+// WhatWeAssessSection.css.ts
 
 import { style } from "@vanilla-extract/css";
 
@@ -6,13 +6,8 @@ export const section = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "flex-start",
-  padding: "4rem 0",
-  backgroundColor: "#f6fbff",
-  backgroundImage: `
-    linear-gradient(to right, #f7fbff 0%, #f8fcff 15%, transparent 35%, transparent 65%, #f8fcff 85%, #f5faff 100%),
-    radial-gradient(circle, #c3e5fb 2.5px, transparent 2.5px)
-  `,
-  backgroundSize: "100% 100%, 40px 40px",
+  padding: "6rem 0",
+  backgroundColor: "#ffffff",
 });
 
 export const sectionContainer = style({
@@ -86,6 +81,9 @@ export const assessmentItem = style({
   alignItems: "center",
   gap: "16px",
   marginBottom: "24px",
+  backgroundColor: "#fafafa",
+  padding: "16px 20px",
+  borderRadius: "12px",
 
   ":last-child": {
     marginBottom: 0,
