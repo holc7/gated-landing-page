@@ -108,7 +108,7 @@ export const plusIconCollapsed = style({
   left: "24px",
   width: "24px",
   height: "24px",
-  color: "#0BA5EC",
+  color: "#a0d1f1", // ✅ CHANGED TO LIGHT BLUE
 });
 
 export const titleCollapsed = style({
@@ -132,7 +132,7 @@ export const svgIconExpanded = style({
 export const closeIconExpanded = style({
   width: "24px",
   height: "24px",
-  color: "#0BA5EC",
+  color: "#70b4ea", // ✅ CHANGED TO MEDIUM BLUE
   marginBottom: "16px",
 });
 
