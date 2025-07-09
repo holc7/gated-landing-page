@@ -20,9 +20,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Contact Us - Gated Landing Page",
+  title: "AI Data Estate Assessment - Gated Landing Page",
   description:
-    "Get in touch with our team. We'd love to hear from you and discuss your project.",
+    "Get expert guidance to optimize your data estate and prepare for AI with Microsoft Fabric.",
 };
 
 export default function RootLayout({
