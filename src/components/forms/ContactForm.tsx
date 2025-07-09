@@ -1,57 +1,38 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { CheckCircle, AlertCircle, ExternalLink } from 'lucide-react';
-import { contactSchema, ContactFormData, getFieldError } from '@/lib/validations/contact';
-import { Input } from '@/components/ui/Input/Input';
-import { Textarea } from '@/components/ui/Textarea/Textarea';
-import { Button } from '@/components/ui/Button/Button';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ClipboardList } from "lucide-react";
+import { z } from "zod";
 import { CtaButton } from "@/components/ui/Button/CtaButton";
-import {
-  formContainer,
-  formGrid,
-  formActions,
-  messageContainer,
-  privacyNotice,
-  linkStyle,
-} from "./form.css";
+import * as styles from "./ContactForm.css";
 
-type FormState = "idle" | "loading" | "success" | "error";
+// Zod validation schema
+const contactSchema = z.object({
+  name: z.string().min(2, "Full name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  company: z.string().min(2, "Company name must be at least 2 characters"),
+  jobTitle: z.string().min(2, "Job title must be at least 2 characters"),
+});
 
-interface ContactFormProps {
-  onSuccess?: (data: ContactFormData) => void;
-  onError?: (error: string) => void;
-}
+type ContactFormData = z.infer<typeof contactSchema>;
 
-export function ContactForm({ onSuccess, onError }: ContactFormProps) {
-  const [formState, setFormState] = useState<FormState>("idle");
-  const [submitMessage, setSubmitMessage] = useState<string>("");
+export function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
     reset,
-    watch,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    mode: "onBlur",
-    defaultValues: {
-      name: "",
-      email: "",
-      company: "",
-      jobTitle: "",
-      phone: "",
-      message: "",
-    },
   });
 
-  const messageValue = watch("message");
-
   const onSubmit = async (data: ContactFormData) => {
-    setFormState("loading");
+    setIsSubmitting(true);
     setSubmitMessage("");
 
     try {
@@ -69,149 +50,101 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
         throw new Error(result.message || "Failed to submit form");
       }
 
-      setFormState("success");
-      setSubmitMessage(
-        "Thank you for your message! We&apos;ll get back to you soon."
-      );
+      setSubmitMessage("Thank you! We'll get back to you soon.");
       reset();
-      onSuccess?.(data);
     } catch (error) {
-      setFormState("error");
-      const errorMessage =
-        error instanceof Error ? error.message : "An unexpected error occurred";
-      setSubmitMessage(errorMessage);
-      onError?.(errorMessage);
+      setSubmitMessage("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
-  const getFieldErrorMessage = (field: keyof ContactFormData) => {
-    const error = errors[field];
-    if (!error) return undefined;
-    return getFieldError(field, error.message || "Invalid value");
-  };
-
   return (
-    <div className={formContainer}>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className={formGrid}>
-          <Input
-            label="Full Name"
-            error={getFieldErrorMessage("name")}
-            required
+    <div className={styles.formContainer}>
+      <div className={styles.headerContainer}>
+        <ClipboardList className={styles.icon} />
+        <h3 className={styles.title}>
+          Fill out the form to sign up for the assessment
+        </h3>
+      </div>
+
+      <p className={styles.urgencyText}>
+        • Limited-time access - registration closes soon!
+      </p>
+
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <div className={styles.fieldGroup}>
+          <label className={styles.label}>Full Name</label>
+          <input
             {...register("name")}
-            placeholder="Enter your full name"
+            type="text"
+            className={`${styles.input} ${
+              errors.name ? styles.inputError : ""
+            }`}
             disabled={isSubmitting}
           />
+          {errors.name && (
+            <span className={styles.errorText}>{errors.name.message}</span>
+          )}
+        </div>
 
-          <Input
-            label="Email Address"
-            type="email"
-            error={getFieldErrorMessage("email")}
-            required
-            {...register("email")}
-            placeholder="Enter your email address"
-            disabled={isSubmitting}
-          />
-
-          <Input
-            label="Company"
-            error={getFieldErrorMessage("company")}
-            required
-            {...register("company")}
-            placeholder="Enter your company name"
-            disabled={isSubmitting}
-          />
-
-          <Input
-            label="Job Title"
-            error={getFieldErrorMessage("jobTitle")}
-            required
-            {...register("jobTitle")}
-            placeholder="Enter your job title"
-            disabled={isSubmitting}
-          />
-
-          <Input
-            label="Phone Number"
-            type="tel"
-            error={getFieldErrorMessage("phone")}
-            {...register("phone")}
-            placeholder="Enter your phone number (optional)"
-            disabled={isSubmitting}
-            helperText="Optional - we'll only call if necessary"
-          />
-
-          <div style={{ gridColumn: "1 / -1" }}>
-            <Textarea
-              label="Message"
-              error={getFieldErrorMessage("message")}
-              {...register("message")}
-              placeholder="Tell us about your project or ask any questions (optional)"
+        <div className={styles.fieldRow}>
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>Business Email</label>
+            <input
+              {...register("email")}
+              type="email"
+              className={`${styles.input} ${
+                errors.email ? styles.inputError : ""
+              }`}
               disabled={isSubmitting}
-              autoResize
-              showCharacterCount
-              maxLength={1000}
-              value={messageValue || ""}
-              helperText="Optional - share any additional details"
             />
+            {errors.email && (
+              <span className={styles.errorText}>{errors.email.message}</span>
+            )}
+          </div>
+          <div className={styles.fieldGroup}>
+            <label className={styles.label}>Company Name</label>
+            <input
+              {...register("company")}
+              type="text"
+              className={`${styles.input} ${
+                errors.company ? styles.inputError : ""
+              }`}
+              disabled={isSubmitting}
+            />
+            {errors.company && (
+              <span className={styles.errorText}>{errors.company.message}</span>
+            )}
           </div>
         </div>
 
-        {submitMessage && (
-          <div className={messageContainer}>
-            {formState === "success" && (
-              <div style={{ color: "var(--colors-success-600)" }}>
-                <CheckCircle size={20} aria-hidden="true" />
-                <span>{submitMessage}</span>
-              </div>
-            )}
-            {formState === "error" && (
-              <div style={{ color: "var(--colors-error-600)" }}>
-                <AlertCircle size={20} aria-hidden="true" />
-                <span>{submitMessage}</span>
-              </div>
-            )}
-          </div>
-        )}
-
-        <div className={privacyNotice}>
-          <p>
-            By submitting this form, you agree to our{" "}
-            <a
-              href="/privacy-policy"
-              className={linkStyle}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Privacy Policy
-              <ExternalLink size={14} aria-hidden="true" />
-            </a>{" "}
-            and{" "}
-            <a
-              href="/terms-of-service"
-              className={linkStyle}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Terms of Service
-              <ExternalLink size={14} aria-hidden="true" />
-            </a>
-            . We respect your privacy and will never share your information with
-            third parties.
-          </p>
-        </div>
-
-        <div className={formActions}>
-          <CtaButton
-            type="submit"
-            loading={isSubmitting}
+        <div className={styles.fieldGroup}>
+          <label className={styles.label}>Job Title</label>
+          <input
+            {...register("jobTitle")}
+            type="text"
+            className={`${styles.input} ${
+              errors.jobTitle ? styles.inputError : ""
+            }`}
             disabled={isSubmitting}
-            fullWidth
-            size="lg"
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </CtaButton>
+          />
+          {errors.jobTitle && (
+            <span className={styles.errorText}>{errors.jobTitle.message}</span>
+          )}
         </div>
+
+        {submitMessage && <div className={styles.message}>{submitMessage}</div>}
+
+        <p className={styles.privacyText}>
+          By using this service, you agree to our Terms of Use and acknowledge
+          our Privacy Policy. Please read these documents carefully to
+          understand your rights and responsibilities.
+        </p>
+
+        <CtaButton type="submit" disabled={isSubmitting} fullWidth>
+          {isSubmitting ? "Sending..." : "Get free assessment"}
+        </CtaButton>
       </form>
     </div>
   );
