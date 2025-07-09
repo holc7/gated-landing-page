@@ -219,6 +219,8 @@ globalStyle("@media (max-width: 768px)", {
   [`.${svgIconCollapsed}`]: {
     top: "20px",
     left: "20px",
+    width: "40px",
+    height: "40px",
   },
   [`.${plusIconCollapsed}`]: {
     bottom: "60px",
@@ -284,6 +286,8 @@ globalStyle("@media (max-width: 600px)", {
   [`.${svgIconCollapsed}`]: {
     top: "16px",
     left: "16px",
+    width: "35px",
+    height: "35px",
   },
   [`.${plusIconCollapsed}`]: {
     bottom: "50px",
@@ -350,6 +354,8 @@ globalStyle("@media (max-width: 480px)", {
   [`.${svgIconCollapsed}`]: {
     top: "12px",
     left: "12px",
+    width: "30px",
+    height: "30px",
   },
   [`.${plusIconCollapsed}`]: {
     bottom: "40px",
