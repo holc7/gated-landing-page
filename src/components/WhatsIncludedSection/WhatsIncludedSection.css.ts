@@ -4,19 +4,30 @@ export const section = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "flex-start",
-  gap: "3rem",
   padding: "4rem 0",
   backgroundColor: "#f6fbff",
   backgroundImage: `
     linear-gradient(to right, #f7fbff 0%, #f8fcff 10%, transparent 20%, transparent 80%, #f8fcff 90%, #f5faff 100%),
     radial-gradient(circle, #c3e5fb 2.5px, transparent 2.5px)
-  `, // ✅ Colors ONLY on sides (0-20% and 80-100%), transparent middle
+  `,
   backgroundSize: "100% 100%, 40px 40px",
+});
+
+// ✅ Add new container style
+export const sectionContainer = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "flex-start",
+  gap: "3rem",
+  maxWidth: "1184px", // Same as navbar
+  margin: "0 auto",
+  paddingLeft: "1.5rem", // ✅ Same as navbar
+  paddingRight: "1rem", // ✅ Same as navbar
+  width: "100%",
 });
 
 export const leftContent = style({
   flex: 1,
-  maxWidth: "500px",
 });
 
 export const title = style({
@@ -75,7 +86,7 @@ export const clearFloat = style({
 
 export const formContainer = style({
   flex: 1,
-  maxWidth: "400px",
+
   background: "#fff",
   borderRadius: "16px",
   boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
