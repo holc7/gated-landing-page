@@ -60,6 +60,7 @@ export const card = style({
     "&:hover": {
       borderColor: "#0BA5EC",
       boxShadow: "0 4px 20px rgba(11, 165, 236, 0.1)",
+      transform: "scale(1.02)",
     },
   },
 });

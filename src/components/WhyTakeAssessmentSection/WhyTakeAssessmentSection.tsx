@@ -52,7 +52,7 @@ export default function WhyTakeAssessmentSection() {
           </div>
 
           <div
-            className={`${styles.card} ${styles.cardHighlighted} ${styles.expandedLayout}`}
+            className={`${styles.card} ${styles.expandedLayout}`}
             role="article" aria-labelledby="card-title-2"
           >
             <svg
