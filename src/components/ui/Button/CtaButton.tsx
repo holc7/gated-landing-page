@@ -1,8 +1,8 @@
 import React from "react";
 import { Loader2 } from "lucide-react";
-import * as styles from "./button.css";
+import * as styles from "./CtaButton.css";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface CtaButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline";
   size?: "sm" | "md" | "lg";
   loading?: boolean;
@@ -10,7 +10,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const CtaButton = React.forwardRef<HTMLButtonElement, CtaButtonProps>(
   (
     {
       variant = "primary",
@@ -20,6 +20,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       fullWidth = false,
       disabled,
       className,
+      style,
       ...props
     },
     ref
@@ -28,16 +29,21 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       styles.baseButton,
       styles.buttonVariants[variant],
       styles.buttonSizes[size],
-      fullWidth && { width: "100%" },
       className,
     ]
       .filter(Boolean)
       .join(" ");
 
+    const combinedStyle = {
+      ...(fullWidth && { width: "100%" }),
+      ...style,
+    };
+
     return (
       <button
         ref={ref}
         className={combinedClassName}
+        style={combinedStyle}
         disabled={disabled || loading}
         aria-disabled={disabled || loading}
         {...props}
@@ -56,7 +62,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
-Button.displayName = "Button";
+CtaButton.displayName = "CtaButton";
 
-export { Button };
-export type { ButtonProps };
+export { CtaButton };
+export type { CtaButtonProps };

@@ -8,9 +8,17 @@ import { contactSchema, ContactFormData, getFieldError } from '@/lib/validations
 import { Input } from '@/components/ui/Input/Input';
 import { Textarea } from '@/components/ui/Textarea/Textarea';
 import { Button } from '@/components/ui/Button/Button';
-import { formContainer, formGrid, formActions, messageContainer, privacyNotice, linkStyle } from './form.css';
+import { CtaButton } from "@/components/ui/Button/CtaButton";
+import {
+  formContainer,
+  formGrid,
+  formActions,
+  messageContainer,
+  privacyNotice,
+  linkStyle,
+} from "./form.css";
 
-type FormState = 'idle' | 'loading' | 'success' | 'error';
+type FormState = "idle" | "loading" | "success" | "error";
 
 interface ContactFormProps {
   onSuccess?: (data: ContactFormData) => void;
@@ -18,8 +26,8 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ onSuccess, onError }: ContactFormProps) {
-  const [formState, setFormState] = useState<FormState>('idle');
-  const [submitMessage, setSubmitMessage] = useState<string>('');
+  const [formState, setFormState] = useState<FormState>("idle");
+  const [submitMessage, setSubmitMessage] = useState<string>("");
 
   const {
     register,
@@ -29,28 +37,28 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
     watch,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    mode: 'onBlur',
+    mode: "onBlur",
     defaultValues: {
-      name: '',
-      email: '',
-      company: '',
-      jobTitle: '',
-      phone: '',
-      message: '',
+      name: "",
+      email: "",
+      company: "",
+      jobTitle: "",
+      phone: "",
+      message: "",
     },
   });
 
-  const messageValue = watch('message');
+  const messageValue = watch("message");
 
   const onSubmit = async (data: ContactFormData) => {
-    setFormState('loading');
-    setSubmitMessage('');
+    setFormState("loading");
+    setSubmitMessage("");
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
@@ -58,16 +66,19 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.message || 'Failed to submit form');
+        throw new Error(result.message || "Failed to submit form");
       }
 
-      setFormState('success');
-      setSubmitMessage('Thank you for your message! We&apos;ll get back to you soon.');
+      setFormState("success");
+      setSubmitMessage(
+        "Thank you for your message! We&apos;ll get back to you soon."
+      );
       reset();
       onSuccess?.(data);
     } catch (error) {
-      setFormState('error');
-      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred';
+      setFormState("error");
+      const errorMessage =
+        error instanceof Error ? error.message : "An unexpected error occurred";
       setSubmitMessage(errorMessage);
       onError?.(errorMessage);
     }
@@ -76,7 +87,7 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
   const getFieldErrorMessage = (field: keyof ContactFormData) => {
     const error = errors[field];
     if (!error) return undefined;
-    return getFieldError(field, error.message || 'Invalid value');
+    return getFieldError(field, error.message || "Invalid value");
   };
 
   return (
@@ -85,9 +96,9 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
         <div className={formGrid}>
           <Input
             label="Full Name"
-            error={getFieldErrorMessage('name')}
+            error={getFieldErrorMessage("name")}
             required
-            {...register('name')}
+            {...register("name")}
             placeholder="Enter your full name"
             disabled={isSubmitting}
           />
@@ -95,27 +106,27 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
           <Input
             label="Email Address"
             type="email"
-            error={getFieldErrorMessage('email')}
+            error={getFieldErrorMessage("email")}
             required
-            {...register('email')}
+            {...register("email")}
             placeholder="Enter your email address"
             disabled={isSubmitting}
           />
 
           <Input
             label="Company"
-            error={getFieldErrorMessage('company')}
+            error={getFieldErrorMessage("company")}
             required
-            {...register('company')}
+            {...register("company")}
             placeholder="Enter your company name"
             disabled={isSubmitting}
           />
 
           <Input
             label="Job Title"
-            error={getFieldErrorMessage('jobTitle')}
+            error={getFieldErrorMessage("jobTitle")}
             required
-            {...register('jobTitle')}
+            {...register("jobTitle")}
             placeholder="Enter your job title"
             disabled={isSubmitting}
           />
@@ -123,24 +134,24 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
           <Input
             label="Phone Number"
             type="tel"
-            error={getFieldErrorMessage('phone')}
-            {...register('phone')}
+            error={getFieldErrorMessage("phone")}
+            {...register("phone")}
             placeholder="Enter your phone number (optional)"
             disabled={isSubmitting}
             helperText="Optional - we'll only call if necessary"
           />
 
-          <div style={{ gridColumn: '1 / -1' }}>
+          <div style={{ gridColumn: "1 / -1" }}>
             <Textarea
               label="Message"
-              error={getFieldErrorMessage('message')}
-              {...register('message')}
+              error={getFieldErrorMessage("message")}
+              {...register("message")}
               placeholder="Tell us about your project or ask any questions (optional)"
               disabled={isSubmitting}
               autoResize
               showCharacterCount
               maxLength={1000}
-              value={messageValue || ''}
+              value={messageValue || ""}
               helperText="Optional - share any additional details"
             />
           </div>
@@ -148,14 +159,14 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
 
         {submitMessage && (
           <div className={messageContainer}>
-            {formState === 'success' && (
-              <div style={{ color: 'var(--colors-success-600)' }}>
+            {formState === "success" && (
+              <div style={{ color: "var(--colors-success-600)" }}>
                 <CheckCircle size={20} aria-hidden="true" />
                 <span>{submitMessage}</span>
               </div>
             )}
-            {formState === 'error' && (
-              <div style={{ color: 'var(--colors-error-600)' }}>
+            {formState === "error" && (
+              <div style={{ color: "var(--colors-error-600)" }}>
                 <AlertCircle size={20} aria-hidden="true" />
                 <span>{submitMessage}</span>
               </div>
@@ -165,19 +176,19 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
 
         <div className={privacyNotice}>
           <p>
-            By submitting this form, you agree to our{' '}
-            <a 
-              href="/privacy-policy" 
+            By submitting this form, you agree to our{" "}
+            <a
+              href="/privacy-policy"
               className={linkStyle}
               target="_blank"
               rel="noopener noreferrer"
             >
               Privacy Policy
               <ExternalLink size={14} aria-hidden="true" />
-            </a>
-            {' '}and{' '}
-            <a 
-              href="/terms-of-service" 
+            </a>{" "}
+            and{" "}
+            <a
+              href="/terms-of-service"
               className={linkStyle}
               target="_blank"
               rel="noopener noreferrer"
@@ -185,20 +196,21 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
               Terms of Service
               <ExternalLink size={14} aria-hidden="true" />
             </a>
-            . We respect your privacy and will never share your information with third parties.
+            . We respect your privacy and will never share your information with
+            third parties.
           </p>
         </div>
 
         <div className={formActions}>
-          <Button
+          <CtaButton
             type="submit"
             loading={isSubmitting}
             disabled={isSubmitting}
             fullWidth
             size="lg"
           >
-            {isSubmitting ? 'Sending...' : 'Send Message'}
-          </Button>
+            {isSubmitting ? "Sending..." : "Send Message"}
+          </CtaButton>
         </div>
       </form>
     </div>
