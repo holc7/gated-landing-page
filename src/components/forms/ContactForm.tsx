@@ -61,12 +61,13 @@ export function ContactForm() {
 
   return (
     <div className={styles.formContainer}>
-      <div className={styles.headerContainer}>
+      <div className={styles.iconContainer}>
         <ClipboardList className={styles.icon} />
-        <h3 className={styles.title}>
-          Fill out the form to sign up for the assessment
-        </h3>
       </div>
+
+      <h3 className={styles.title}>
+        Fill out the form to sign up for the assessment
+      </h3>
 
       <p className={styles.urgencyText}>
         • Limited-time access - registration closes soon!

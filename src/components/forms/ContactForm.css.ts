@@ -9,25 +9,23 @@ export const formContainer = style({
   maxWidth: "400px", // ✅ Make it skinnier like Figma
 });
 
-export const headerContainer = style({
+export const iconContainer = style({
   display: "flex",
-  alignItems: "center",
-  gap: "12px",
+  justifyContent: "flex-start", // ✅ Left align instead of center
   marginBottom: "24px",
 });
 
 export const icon = style({
-  width: "24px",
-  height: "24px",
+  width: "48px",
+  height: "48px",
   color: "#0BA5EC",
-  flexShrink: 0,
 });
 
 export const title = style({
   fontSize: "22px",
   fontWeight: 700,
   color: "#000",
-  margin: 0,
+  marginBottom: "16px",
   lineHeight: "1.3",
 });
 
