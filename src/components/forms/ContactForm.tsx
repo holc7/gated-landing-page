@@ -143,7 +143,11 @@ export function ContactForm() {
           understand your rights and responsibilities.
         </p>
 
-        <CtaButton type="submit" disabled={isSubmitting} fullWidth>
+        <CtaButton
+          type="submit"
+          disabled={isSubmitting}
+          className={styles.leftAlignedButton}
+        >
           {isSubmitting ? "Sending..." : "Get free assessment"}
         </CtaButton>
       </form>

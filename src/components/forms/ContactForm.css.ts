@@ -42,7 +42,9 @@ export const form = style({
   flexDirection: "column",
   gap: "16px",
 });
-
+export const leftAlignedButton = style({
+  alignSelf: "flex-start",
+});
 export const fieldGroup = style({
   display: "flex",
   flexDirection: "column",
@@ -64,10 +66,10 @@ export const label = style({
 });
 
 export const input = style({
-  padding: "12px",
+  padding: "6px",
   border: "1px solid #d1d5db",
   borderRadius: "8px",
-  fontSize: "16px",
+  fontSize: "14px",
   backgroundColor: "#fff",
   transition: "border-color 0.2s ease",
   width: "100%",
