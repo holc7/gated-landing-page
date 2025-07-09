@@ -219,9 +219,11 @@ globalStyle(".page-container", {
   alignItems: "center",
   justifyContent: "center",
   backgroundColor: "#fff",
-  backgroundImage:
-    "radial-gradient(circle, rgba(11, 165, 236, 0.3) 2.5px, transparent 2.5px)",
-  backgroundSize: "40px 40px",
+  backgroundImage: `
+    radial-gradient(ellipse 50% 80% at center, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0.7) 50%, transparent 70%),
+    radial-gradient(circle, rgba(11, 165, 236, 0.3) 2.5px, transparent 2.5px)
+  `, // ✅ ellipse 50% 80% = MUCH taller
+  backgroundSize: "100% 100%, 40px 40px",
   position: "relative",
   padding: "0",
 });
