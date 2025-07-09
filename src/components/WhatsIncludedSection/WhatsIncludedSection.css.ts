@@ -7,9 +7,9 @@ export const section = style({
   padding: "4rem 0",
   backgroundColor: "#f6fbff",
   backgroundImage: `
-    linear-gradient(to right, #f7fbff 0%, #f8fcff 10%, transparent 20%, transparent 80%, #f8fcff 90%, #f5faff 100%),
+    linear-gradient(to right, #f7fbff 0%, #f8fcff 15%, transparent 35%, transparent 65%, #f8fcff 85%, #f5faff 100%),
     radial-gradient(circle, #c3e5fb 2.5px, transparent 2.5px)
-  `,
+  `, // ✅ transparent zone: 35%-65% (smaller)
   backgroundSize: "100% 100%, 40px 40px",
 });
 
