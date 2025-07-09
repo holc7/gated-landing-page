@@ -56,11 +56,15 @@ export const stepsList = style({
 });
 
 export const stepItem = style({
-  marginBottom: "24px",
-  padding: "16px",
-  border: "1px solid #b3b3ff",
+  marginBottom: "16px", // ✅ Much smaller gap (was 48px)
+  display: "flex",
+  alignItems: "flex-start",
+  gap: "24px",
+  backgroundColor: "#ffffff",
+  padding: "20px", // ✅ Slightly less padding
   borderRadius: "12px",
-  background: "#fff",
+  maxWidth: "600px", // ✅ Narrower width
+  width: "100%",
 
   ":last-child": {
     marginBottom: 0,
@@ -68,26 +72,36 @@ export const stepItem = style({
 });
 
 export const stepNumber = style({
-  fontSize: "32px",
-  fontWeight: 700,
-  color: "#b3b3ff",
-  float: "left",
-  marginRight: "16px",
+  fontSize: "64px",
+  fontWeight: 600,
+  color: "#E5F0FF", // ✅ Light blue color for the number text
+  lineHeight: "1",
+  flexShrink: 0,
+  width: "80px",
+  textAlign: "center",
 });
 
 export const stepContent = style({
-  overflow: "hidden",
+  flex: 1, // ✅ Take remaining space
 });
 
 export const stepTitle = style({
-  fontWeight: 600,
-  fontSize: "20px",
+  fontFamily:
+    "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  fontWeight: 500, // ✅ Medium weight
+  fontSize: "20px", // ✅ From Figma specs
+  color: "#000000", // ✅ Black color
+  marginBottom: "8px",
 });
 
 export const stepDescription = style({
-  fontSize: "16px",
+  fontFamily:
+    "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  fontSize: "16px", // ✅ From Figma specs
+  color: "#414651", // ✅ Gray color from Figma
+  lineHeight: "1.5",
 });
 
 export const clearFloat = style({
-  clear: "both",
+  // ✅ No longer needed with flexbox
 });
