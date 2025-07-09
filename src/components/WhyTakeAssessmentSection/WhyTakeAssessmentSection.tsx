@@ -17,10 +17,10 @@ export default function WhyTakeAssessmentSection() {
         </p>
 
         <div className={styles.cardsGrid}>
-          {/* FIRST CARD - UNCHANGED */}
-          <div className={styles.card}>
+          {/* FIRST CARD - Uses collapsedLayout */}
+          <div className={`${styles.card} ${styles.collapsedLayout}`}>
             <svg
-              className={styles.svgIconOnCard}
+              className={styles.svgIconCollapsed}
               width="50"
               height="50"
               viewBox="0 0 50 50"
@@ -48,20 +48,25 @@ export default function WhyTakeAssessmentSection() {
                 />
               </g>
             </svg>
-            <div className={styles.cardPlusLeft}>
-              <Plus className={styles.plusIconLeft} />
-            </div>
-            <h3 className={styles.cardTitleSingleLine}>
+            <Plus className={styles.plusIconCollapsed} />
+            <h3 className={styles.titleCollapsed}>
               Clarity on Your Data Landscape
             </h3>
           </div>
 
-          {/* SECOND CARD - ✅ REBUILT WITH THE FINAL, CORRECT LAYOUT */}
+          {/* SECOND CARD - Uses expandedLayout */}
           <div
-            className={`${styles.card} ${styles.cardHighlighted} ${styles.cardExpanded}`}
+            className={`${styles.card} ${styles.cardHighlighted} ${styles.expandedLayout}`}
           >
-            {/* TOP ITEM: Just the SVG */}
-            <svg className={styles.svgIconTop}>
+            {/* TOP ITEM */}
+            <svg
+              className={styles.svgIconExpanded}
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <g transform="rotate(-105 25 25)">
                 <path
                   d="M 43.78 31.84 A 20 20 0 0 1 18.17 43.78"
@@ -84,9 +89,9 @@ export default function WhyTakeAssessmentSection() {
               </g>
             </svg>
 
-            {/* BOTTOM ITEM: The X icon and the text, grouped together */}
+            {/* BOTTOM ITEM */}
             <div>
-              <X className={styles.closeIconBottom} />
+              <X className={styles.closeIconExpanded} />
               <h3 className={styles.cardTitle}>
                 Strategic Guidance from Experts
               </h3>
@@ -97,14 +102,12 @@ export default function WhyTakeAssessmentSection() {
             </div>
           </div>
 
-          {/* THIRD CARD - UNCHANGED */}
-          <div className={styles.card}>
-            <div className={styles.iconContainer}>
-              <Zap className={styles.icon} />
+          {/* THIRD CARD - Uses defaultLayout */}
+          <div className={`${styles.card} ${styles.defaultLayout}`}>
+            <div className={styles.iconContainerDefault}>
+              <Zap className={styles.lucideIcon} />
             </div>
-            <div className={styles.cardPlus}>
-              <Plus className={styles.plusIcon} />
-            </div>
+            <Plus className={styles.plusIconDefault} />
             <h3 className={styles.cardTitle}>Accelerate AI Readiness</h3>
             <p className={styles.cardDescription}>
               Get expert insights tailored to your organisation's goals, helping

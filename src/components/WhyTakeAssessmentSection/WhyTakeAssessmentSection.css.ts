@@ -53,9 +53,6 @@ export const card = style({
   backgroundColor: "#ffffff",
   border: "1px solid #e5e7eb",
   borderRadius: "16px",
-  padding: "32px 24px",
-  textAlign: "center",
-  position: "relative",
   transition: "all 0.3s ease",
   minHeight: "380px",
 
@@ -72,7 +69,75 @@ export const cardHighlighted = style({
   boxShadow: "0 4px 20px rgba(11, 165, 236, 0.15)",
 });
 
-export const iconContainer = style({
+// === LAYOUT STYLES ===
+
+// ✅ NEW: Layout for the first, "collapsed" card. Uses absolute positioning.
+export const collapsedLayout = style({
+  position: "relative",
+  padding: "24px",
+});
+
+// ✅ NEW: Layout for the second, "expanded" card. Uses Flexbox.
+export const expandedLayout = style({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  textAlign: "left",
+  padding: "32px 24px",
+});
+
+// ✅ NEW: Layout for the third, "default" card.
+export const defaultLayout = style({
+  position: "relative",
+  textAlign: "center",
+  padding: "32px 24px",
+});
+
+// === ELEMENT STYLES ===
+
+// For the "collapsed" card
+export const svgIconCollapsed = style({
+  position: "absolute",
+  top: "24px",
+  left: "24px",
+});
+
+export const plusIconCollapsed = style({
+  position: "absolute",
+  bottom: "70px",
+  left: "24px",
+  width: "24px",
+  height: "24px",
+  color: "#0BA5EC",
+});
+
+export const titleCollapsed = style({
+  fontFamily: "'DM Sans', sans-serif",
+  fontSize: "20px",
+  fontWeight: 600,
+  position: "absolute",
+  bottom: "24px",
+  left: "24px",
+  right: "24px",
+  textAlign: "left",
+  whiteSpace: "nowrap",
+});
+
+// For the "expanded" card
+export const svgIconExpanded = style({
+  width: "50px",
+  height: "50px",
+});
+
+export const closeIconExpanded = style({
+  width: "24px",
+  height: "24px",
+  color: "#0BA5EC",
+  marginBottom: "16px",
+});
+
+// For the "default" card
+export const iconContainerDefault = style({
   width: "60px",
   height: "60px",
   margin: "0 auto 24px auto",
@@ -83,33 +148,19 @@ export const iconContainer = style({
   backgroundColor: "#f0f9ff",
 });
 
-export const icon = style({
-  width: "32px",
-  height: "32px",
-  color: "#0BA5EC",
-});
-
-export const cardPlus = style({
+export const plusIconDefault = style({
   position: "absolute",
   bottom: "24px",
   left: "50%",
   transform: "translateX(-50%)",
   width: "24px",
   height: "24px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-});
-
-export const plusIcon = style({
-  width: "24px",
-  height: "24px",
   color: "#0BA5EC",
 });
 
+// Generic text styles used by multiple cards
 export const cardTitle = style({
-  fontFamily:
-    "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  fontFamily: "'DM Sans', sans-serif",
   fontSize: "20px",
   fontWeight: 600,
   color: "#000000",
@@ -118,70 +169,15 @@ export const cardTitle = style({
 });
 
 export const cardDescription = style({
-  fontFamily:
-    "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  fontFamily: "'DM Sans', sans-serif",
   fontSize: "16px",
   fontWeight: 400,
   color: "#6b7280",
   lineHeight: "1.5",
 });
 
-export const svgIconOnCard = style({
-  position: "absolute",
-  top: "24px",
-  left: "24px",
-});
-
-export const cardPlusLeft = style({
-  position: "absolute",
-  bottom: "70px",
-  left: "24px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-});
-
-export const plusIconLeft = style({
-  width: "24px",
-  height: "24px",
+export const lucideIcon = style({
+  width: "32px",
+  height: "32px",
   color: "#0BA5EC",
-});
-
-export const cardTitleSingleLine = style({
-  fontFamily:
-    "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-  fontSize: "20px",
-  fontWeight: 600,
-  color: "#000000",
-  lineHeight: "1.3",
-  position: "absolute",
-  bottom: "24px",
-  left: "24px",
-  right: "24px",
-  textAlign: "left",
-  whiteSpace: "nowrap",
-});
-
-// ✅ NEW: The main flex container. Pushes content to top and bottom.
-export const cardExpanded = style({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  textAlign: "left",
-  // Override padding for full control
-  padding: "32px 24px",
-});
-
-// ✅ NEW: Simple style for the SVG icon at the top
-export const svgIconTop = style({
-  width: "50px",
-  height: "50px",
-});
-
-// ✅ NEW: Simple style for the X icon grouped with the text
-export const closeIconBottom = style({
-  width: "24px",
-  height: "24px",
-  color: "#0BA5EC",
-  marginBottom: "16px", // This creates space between the X and the title
 });
