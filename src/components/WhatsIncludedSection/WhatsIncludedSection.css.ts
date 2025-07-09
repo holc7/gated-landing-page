@@ -56,15 +56,16 @@ export const stepsList = style({
 });
 
 export const stepItem = style({
-  marginBottom: "16px", // ✅ Much smaller gap (was 48px)
+  marginBottom: "16px",
   display: "flex",
-  alignItems: "flex-start",
-  gap: "24px",
+  alignItems: "center", // ✅ Center align to prevent cutoff
+  gap: "16px", // ✅ Smaller gap since number is bigger
   backgroundColor: "#ffffff",
-  padding: "20px", // ✅ Slightly less padding
+  padding: "20px",
   borderRadius: "12px",
-  maxWidth: "600px", // ✅ Narrower width
+  maxWidth: "600px",
   width: "100%",
+  position: "relative", // ✅ For positioning the number
 
   ":last-child": {
     marginBottom: 0,
@@ -72,13 +73,16 @@ export const stepItem = style({
 });
 
 export const stepNumber = style({
-  fontSize: "64px",
+  fontSize: "80px", // ✅ Bigger size
   fontWeight: 600,
-  color: "#E5F0FF", // ✅ Light blue color for the number text
+  color: "#e5f2fd", // ✅ New color
   lineHeight: "1",
   flexShrink: 0,
-  width: "80px",
-  textAlign: "center",
+  width: "100px", // ✅ Wider to accommodate bigger size
+  textAlign: "left", // ✅ Align left
+  position: "relative",
+  left: "-50px", // ✅ Push more to the left
+  top: "40px", // ✅ Push more down
 });
 
 export const stepContent = style({
