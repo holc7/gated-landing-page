@@ -45,7 +45,7 @@ export const cardsGrid = style({
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
   gap: "32px",
-  maxWidth: "1000px",
+  maxWidth: "1140px",
   margin: "0 auto",
 });
 
@@ -57,6 +57,7 @@ export const card = style({
   textAlign: "center",
   position: "relative",
   transition: "all 0.3s ease",
+  minHeight: "380px",
 
   selectors: {
     "&:hover": {
@@ -101,7 +102,6 @@ export const cardPlus = style({
 });
 
 export const plusIcon = style({
-  // ✅ CHANGED
   width: "24px",
   height: "24px",
   color: "#0BA5EC",
@@ -126,18 +126,10 @@ export const cardDescription = style({
   lineHeight: "1.5",
 });
 
-export const cardCollapsed = style({
-  backgroundColor: "#ffffff",
-  border: "1px solid #e5e7eb",
-  borderRadius: "16px",
-  padding: "24px",
-  textAlign: "left",
-  position: "relative",
-  transition: "all 0.3s ease",
-  minHeight: "200px",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "flex-end",
+export const svgIconOnCard = style({
+  position: "absolute",
+  top: "24px",
+  left: "24px",
 });
 
 export const cardPlusLeft = style({
@@ -150,7 +142,6 @@ export const cardPlusLeft = style({
 });
 
 export const plusIconLeft = style({
-  // ✅ CHANGED
   width: "24px",
   height: "24px",
   color: "#0BA5EC",
@@ -163,13 +154,34 @@ export const cardTitleSingleLine = style({
   fontWeight: 600,
   color: "#000000",
   lineHeight: "1.3",
-  margin: 0,
-  whiteSpace: "nowrap",
+  position: "absolute",
+  bottom: "24px",
+  left: "24px",
+  right: "24px",
   textAlign: "left",
+  whiteSpace: "nowrap",
 });
 
-export const svgIconOnCard = style({
-  position: "absolute",
-  top: "24px",
-  left: "24px",
+// ✅ NEW: The main flex container. Pushes content to top and bottom.
+export const cardExpanded = style({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  textAlign: "left",
+  // Override padding for full control
+  padding: "32px 24px",
+});
+
+// ✅ NEW: Simple style for the SVG icon at the top
+export const svgIconTop = style({
+  width: "50px",
+  height: "50px",
+});
+
+// ✅ NEW: Simple style for the X icon grouped with the text
+export const closeIconBottom = style({
+  width: "24px",
+  height: "24px",
+  color: "#0BA5EC",
+  marginBottom: "16px", // This creates space between the X and the title
 });
