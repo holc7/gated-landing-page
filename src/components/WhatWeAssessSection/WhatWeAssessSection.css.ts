@@ -1,6 +1,6 @@
 // WhatWeAssessSection.css.ts
 
-import { style } from "@vanilla-extract/css";
+import { style, globalStyle } from "@vanilla-extract/css";
 
 export const section = style({
   display: "flex",
@@ -112,4 +112,115 @@ export const icon = style({
   width: "24px",
   height: "24px",
   color: "#5fa4e6",
+});
+
+// Mobile responsive styles
+globalStyle("@media (max-width: 768px)", {
+  [`.${section}`]: {
+    padding: "4rem 0",
+  },
+  [`.${sectionContainer}`]: {
+    flexDirection: "column-reverse",
+    gap: "2rem",
+    paddingLeft: "2rem",
+    paddingRight: "2rem",
+  },
+  [`.${leftContent}`]: {
+    textAlign: "center",
+  },
+  [`.${title}`]: {
+    fontSize: "48px",
+    lineHeight: "56px",
+    marginBottom: "20px",
+  },
+  [`.${description}`]: {
+    fontSize: "20px",
+    lineHeight: "1.4",
+    marginBottom: "28px",
+  },
+  [`.${assessmentItem}`]: {
+    padding: "14px 16px",
+  },
+  [`.${assessmentText}`]: {
+    fontSize: "18px",
+  },
+});
+
+globalStyle("@media (max-width: 600px)", {
+  [`.${section}`]: {
+    padding: "3rem 0",
+  },
+  [`.${sectionContainer}`]: {
+    gap: "1.5rem",
+    paddingLeft: "1.5rem",
+    paddingRight: "1.5rem",
+  },
+  [`.${leftContent}`]: {
+    textAlign: "center",
+  },
+  [`.${title}`]: {
+    fontSize: "36px",
+    lineHeight: "44px",
+    marginBottom: "16px",
+  },
+  [`.${description}`]: {
+    fontSize: "18px",
+    lineHeight: "1.4",
+    marginBottom: "24px",
+  },
+  [`.${assessmentItem}`]: {
+    padding: "12px 16px",
+    gap: "12px",
+  },
+  [`.${assessmentText}`]: {
+    fontSize: "16px",
+  },
+  [`.${icon}`]: {
+    width: "20px",
+    height: "20px",
+  },
+  [`.${iconContainer}`]: {
+    width: "20px",
+    height: "20px",
+  },
+});
+
+globalStyle("@media (max-width: 480px)", {
+  [`.${section}`]: {
+    padding: "2rem 0",
+  },
+  [`.${sectionContainer}`]: {
+    gap: "1rem",
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
+  },
+  [`.${leftContent}`]: {
+    textAlign: "center",
+  },
+  [`.${title}`]: {
+    fontSize: "28px",
+    lineHeight: "34px",
+    marginBottom: "12px",
+  },
+  [`.${description}`]: {
+    fontSize: "16px",
+    lineHeight: "1.4",
+    marginBottom: "20px",
+  },
+  [`.${assessmentItem}`]: {
+    padding: "10px 12px",
+    gap: "10px",
+    marginBottom: "16px",
+  },
+  [`.${assessmentText}`]: {
+    fontSize: "14px",
+  },
+  [`.${icon}`]: {
+    width: "18px",
+    height: "18px",
+  },
+  [`.${iconContainer}`]: {
+    width: "18px",
+    height: "18px",
+  },
 });

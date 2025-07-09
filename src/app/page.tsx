@@ -15,9 +15,9 @@ export default function Home() {
         <LandingPage />
       </div>
 
-      <WhatsIncludedSection />
-      {/*      <WhyTakeAssessmentSection />
-      <WhatWeAssessSection /> */}
+      {/*    <WhatsIncludedSection />
+      <WhyTakeAssessmentSection /> */}
+      <WhatWeAssessSection />
       <Footer />
     </>
   );
