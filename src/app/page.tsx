@@ -1,7 +1,7 @@
 'use client';
 
-import Navbar from "@/components/Navbar";
-import LandingPage from "@/components/LandingPage";
+import Navbar from "@/components/Navbar/Navbar";
+import LandingPage from "@/components/LandingPage/LandingPage";
 
 export default function Home() {
   return (
