@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { navbar, logoContainer } from "./Navbar.css";
+import { navbar } from "./Navbar.css";
 import { CtaButton } from "@/components/ui/Button/CtaButton";
 
 export default function Navbar() {

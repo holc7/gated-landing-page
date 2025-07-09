@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 
 export const navbar = style({
   position: "fixed",
-  top: "1rem",
+  top: "2rem",
   left: "1rem",
   right: "1rem",
   maxWidth: "1184px", // ✅ Figma width
