@@ -14,11 +14,12 @@ globalStyle('html, body', {
   height: '100%',
 });
 
-globalStyle('body', {
+globalStyle("body", {
   lineHeight: vars.typography.lineHeight.normal,
-  WebkitFontSmoothing: 'antialiased',
-  MozOsxFontSmoothing: 'grayscale',
-  fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+  WebkitFontSmoothing: "antialiased",
+  MozOsxFontSmoothing: "grayscale",
+  fontFamily:
+    'var(--font-dm-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
   fontSize: vars.typography.fontSize.base,
   color: vars.colors.gray[900],
   backgroundColor: vars.colors.white,
