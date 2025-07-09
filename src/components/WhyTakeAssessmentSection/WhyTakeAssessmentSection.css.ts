@@ -1,6 +1,8 @@
-// WhyTakeAssessmentSection.css.ts
+// WhyTakeAssessmentSection.css.ts (Full File)
 
 import { style } from "@vanilla-extract/css";
+
+// ... (all the styles from before, from section to cardTitleSingleLine) ...
 
 export const section = style({
   padding: "6rem 0",
@@ -166,39 +168,11 @@ export const cardTitleSingleLine = style({
   textAlign: "left",
 });
 
-// ✅ UPDATED STYLE: Icon is now bigger and on the left
-// WhyTakeAssessmentSection.css.ts (Partial - only showing the changed part)
-
-// ✅ UPDATED STYLE: Icon is now 50px and proportionally correct
-export const staticIconOnCard = style({
-  // Visuals: Made smaller to 50px
-  width: "50px", // ✅ Changed
-  height: "50px", // ✅ Changed
-  borderRadius: "50%",
-  background: `conic-gradient(
-    #0BA5EC 0deg 100deg,
-    transparent 100deg 120deg,
-    #e5e7eb 120deg 220deg,
-    transparent 220deg 240deg,
-    #e5e7eb 240deg 340deg,
-    transparent 340deg 360deg
-  )`,
-  selectors: {
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      // Reduced thickness to match smaller size
-      top: "4px",    // ✅ Changed
-      left: "4px",   // ✅ Changed
-      right: "4px",  // ✅ Changed
-      bottom: "4px", // ✅ Changed
-      backgroundColor: "#fff",
-      borderRadius: "50%",
-    },
-  },
-
-  // Positioning: Stays on the left
+// ✅ NEW STYLE for positioning the SVG icon.
+export const svgIconOnCard = style({
   position: "absolute",
   top: "24px",
   left: "24px",
 });
+
+// You can now delete the old `staticIconOnCard` style, as it's no longer used.

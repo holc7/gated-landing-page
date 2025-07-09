@@ -19,8 +19,41 @@ export default function WhyTakeAssessmentSection() {
         <div className={styles.cardsGrid}>
           {/* FIRST CARD - COLLAPSED STATE */}
           <div className={styles.cardCollapsed}>
-            {/* ✅ FIXED: Replaced nested divs with a single div using the new style */}
-            <div className={styles.staticIconOnCard}></div>
+            {/* FINAL VERSION with PERFECT SHAPE & ROTATION */}
+            <svg
+              className={styles.svgIconOnCard}
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g transform="rotate(-105 25 25)">
+                {" "}
+                {/* This group rotates everything inside it */}
+                {/* Blue Arc */}
+                <path
+                  d="M 43.78 31.84 A 20 20 0 0 1 18.17 43.78"
+                  stroke="#0BA5EC"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                />
+                {/* Gray Arc */}
+                <path
+                  d="M 9.68 37.86 A 20 20 0 0 1 12.14 9.68"
+                  stroke="#e5e7eb"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                />
+                {/* Gray Arc */}
+                <path
+                  d="M 21.53 5.31 A 20 20 0 0 1 44.69 21.53"
+                  stroke="#e5e7eb"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                />
+              </g>
+            </svg>
 
             <div className={styles.cardPlusLeft}>
               <Plus className={styles.plusIconLeft} />
